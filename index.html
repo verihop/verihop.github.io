@@ -1,599 +1,1745 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ER7JY9X28T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ER7JY9X28T');
-</script>
+  <!-- =========================
+       GOOGLE ANALYTICS
+       ========================= -->
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER7JY9X28T"></script>
 
-<meta name="description" content="Née de l'alliance entre le bocage normand et le Bourbonnais, Chez VERIHOP, nous brassons des bières de caractère avec des ingrédients de qualité et du houblon produit à la ferme.">
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-<meta name="keywords" content="brasserie artisanale, beer, bière artisanale, Normandie, Bourbonnais, houblon, bière, ipa, atelier">
+    function gtag(){
+      dataLayer.push(arguments);
+    }
 
-<meta name="author" content="VERIHOP">
+    gtag('js', new Date());
 
-<link rel="canonical" href="https://www.verihop.fr/">
-
-<title>VERIHOP | Brasserie Artisanale</title>
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f7f4ec;
-  color:#204020;
-}
-
-.logo{
-  width:40%;
-  height:auto;
-  display:block;
-  margin:0 auto 20px auto;
-}
-
-.biere1{
-  width:80%;
-  height:auto;
-  display:block;
-  margin:0 auto;
-}
-
-header{
-  background:linear-gradient(135deg,#4F8A54,#2E6F40);
-  color:white;
-  text-align:center;
-  padding:50px 20px;
-}
-
-header h1{
-  font-size:3.5rem;
-  letter-spacing:4px;
-  margin-bottom:10px;
-}
-
-header p{
-  font-size:1.2rem;
-}
-
-nav{
-  background:#2E6F40;
-  padding:15px;
-  position:sticky;
-  top:0;
-  z-index:100;
-  text-align:center;
-}
-
-nav a{
-  color:#c7962a;
-  text-decoration:none;
-  margin:0 20px;
-  font-weight:bold;
-  transition:.3s;
-}
-
-nav a:hover{
-  color:#f3c86b;
-}
-
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-}
-
-h2{
-  color:#0b4d2a;
-  margin-bottom:25px;
-  text-align:center;
-  font-size:2rem;
-}
-
-section p{
-  text-align:center;
-  font-size:1.05rem;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  margin-top:35px;
-}
-
-.card{
-  background:white;
-  border-radius:18px;
-  padding:25px;
-  border:2px solid #DCE8D8;
-  box-shadow:0 8px 18px rgba(0,0,0,.10);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 12px 25px rgba(0,0,0,.25);
-}
-
-.card h3{
-  color:#0b4d2a;
-  margin-bottom:15px;
-  text-align:center;
-}
-
-.card p{
-  white-space:pre-line;
-  text-align:left;
-}
-
-.button{
-  display:block;
-  width:220px;
-  margin:40px auto 0;
-  text-align:center;
-  background:#c7962a;
-  color:white;
-  font-weight:bold;
-  text-decoration:none;
-  padding:14px;
-  border-radius:8px;
-  transition:.3s;
-}
-
-.button:hover{
-  background:#a97d22;
-}
+    gtag('config', 'G-ER7JY9X28T');
+  </script>
 
 
-/* =========================
-   COLLECTION VERIHOP
-========================= */
+  <meta charset="UTF-8">
 
-.collection-intro{
-  margin-bottom:30px;
-}
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-.beer-list{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  max-width:600px;
-  margin:30px auto;
-}
+  <meta name="description"
+        content="Née de l'alliance entre le bocage normand et le Bourbonnais, VERIHOP brasse des bières de caractère avec des ingrédients de qualité et du houblon produit à la ferme.">
 
-.beer-item{
-  display:block;
-  background:white;
-  padding:18px 20px;
-  border-radius:12px;
-  cursor:pointer;
-  border:2px solid #DCE8D8;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
-  transition:.3s;
-  font-size:1.1rem;
-}
+  <meta name="keywords"
+        content="brasserie artisanale, bière artisanale, Normandie, Bourbonnais, houblon, bière, IPA">
 
-.beer-item:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 18px rgba(0,0,0,.15);
-}
+  <meta name="author"
+        content="VERIHOP">
 
-.beer-checkbox{
-  margin-right:12px;
-  transform:scale(1.3);
-  cursor:pointer;
-}
+  <link rel="canonical"
+        href="https://www.verihop.fr/">
 
-.progress-container{
-  width:100%;
-  max-width:600px;
-  height:28px;
-  margin:25px auto 15px;
-  background:#DCE8D8;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:#c7962a;
-  border-radius:20px;
-  transition:width .5s ease;
-}
-
-#progressText,
-#progressMessage{
-  text-align:center;
-  margin:15px auto;
-  font-size:1.1rem;
-}
-
-#progressMessage{
-  font-weight:bold;
-}
+  <title>VERIHOP | Brasserie Artisanale</title>
 
 
-footer{
-  background:#2E6F40;
-  color:white;
-  text-align:center;
-  padding:30px 20px;
-}
+  <!-- =========================
+       STYLE
+       ========================= -->
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
 
 
-/* VERSION MOBILE */
+    body {
 
-@media(max-width:600px){
+      margin: 0;
 
-  .logo{
-    width:75%;
-  }
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  nav a{
-    display:inline-block;
-    margin:8px 10px;
-  }
+      background: #f7f4ec;
 
-}
+      color: #204020;
 
-</style>
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+
+      background:
+        linear-gradient(
+          135deg,
+          #4F8A54,
+          #2E6F40
+        );
+
+      padding: 25px 20px;
+
+      text-align: center;
+    }
+
+
+    .logo {
+
+      max-width: 220px;
+
+      width: 80%;
+
+      height: auto;
+
+      border-radius: 10px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav {
+
+      background: #2E6F40;
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      padding: 12px;
+    }
+
+
+    nav a {
+
+      color: #c7962a;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      padding: 8px 14px;
+
+      border-radius: 8px;
+
+      transition: 0.2s;
+    }
+
+
+    nav a:hover {
+
+      background: rgba(255,255,255,0.12);
+
+      color: white;
+    }
+
+
+    /* =========================
+       SECTIONS
+       ========================= */
+
+    section {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 50px 20px;
+    }
+
+
+    h2 {
+
+      text-align: center;
+
+      color: #0b4d2a;
+
+      margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       BIÈRES
+       ========================= */
+
+    .cards {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(260px, 1fr)
+        );
+
+      gap: 25px;
+    }
+
+
+    .card {
+
+      background: white;
+
+      border:
+        1px solid
+        #DCE8D8;
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.10);
+
+      padding-bottom: 25px;
+
+      text-align: center;
+    }
+
+
+    .card img {
+
+      width: 100%;
+
+      height: 280px;
+
+      object-fit: cover;
+    }
+
+
+    .card h3 {
+
+      color: #2E6F40;
+
+      margin: 20px 15px 10px;
+
+      font-size: 1.4rem;
+    }
+
+
+    .card p {
+
+      margin: 10px 20px;
+
+      text-align: center;
+    }
+
+
+    .recipe-link {
+
+      display: inline-block;
+
+      margin-top: 10px;
+
+      color: #2E6F40;
+
+      font-weight: bold;
+
+      text-decoration: none;
+    }
+
+
+    .recipe-link:hover {
+
+      color: #c7962a;
+    }
+
+
+    /* =========================
+       NOTATION
+       ========================= */
+
+    .rating {
+
+      margin:
+        20px 20px 0;
+
+      padding-top: 18px;
+
+      border-top:
+        1px solid
+        #DCE8D8;
+
+      text-align: center;
+    }
+
+
+    .rating-title {
+
+      font-size: 0.9rem;
+
+      color: #666;
+
+      margin-bottom: 5px;
+    }
+
+
+    .stars {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 4px;
+
+      margin: 5px 0 10px;
+    }
+
+
+    .stars span {
+
+      font-size: 1.9rem;
+
+      color: #d8d8d8;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.15s ease,
+        color 0.15s ease;
+    }
+
+
+    .stars span:hover {
+
+      color: #c7962a;
+
+      transform: scale(1.15);
+    }
+
+
+    .stars span.active {
+
+      color: #c7962a;
+    }
+
+
+    .rating-result {
+
+      color: #666;
+
+      font-size: 0.9rem;
+    }
+
+
+    .rating-result strong {
+
+      color: #204020;
+
+      font-size: 1rem;
+
+      margin-right: 5px;
+    }
+
+
+    .rating-message {
+
+      margin-top: 8px;
+
+      font-size: 0.85rem;
+
+      color: #2E6F40;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       COLLECTION
+       ========================= */
+
+    #collection {
+
+      padding-top: 20px;
+
+      padding-bottom: 40px;
+    }
+
+
+    .collection-intro {
+
+      text-align: center;
+
+      font-size: 1.15rem;
+
+      font-weight: bold;
+
+      margin-bottom: 25px;
+    }
+
+
+    .beer-list {
+
+      max-width: 600px;
+
+      margin: auto;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 12px;
+    }
+
+
+    .beer-item {
+
+      background: white;
+
+      border:
+        1px solid
+        #DCE8D8;
+
+      border-radius: 12px;
+
+      padding: 14px 18px;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+
+    .beer-item:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 4px 12px
+        rgba(0,0,0,0.08);
+    }
+
+
+    .beer-checkbox {
+
+      margin-right: 10px;
+
+      transform: scale(1.2);
+
+      accent-color: #2E6F40;
+    }
+
+
+    .progress-container {
+
+      max-width: 600px;
+
+      height: 18px;
+
+      background: #DCE8D8;
+
+      border-radius: 20px;
+
+      margin: 25px auto 10px;
+
+      overflow: hidden;
+    }
+
+
+    .progress-bar {
+
+      height: 100%;
+
+      width: 0%;
+
+      background:
+        linear-gradient(
+          90deg,
+          #4F8A54,
+          #c7962a
+        );
+
+      border-radius: 20px;
+
+      transition: width 0.4s ease;
+    }
+
+
+    #progressText {
+
+      text-align: center;
+
+      font-weight: bold;
+
+      margin-bottom: 5px;
+    }
+
+
+    #progressMessage {
+
+      text-align: center;
+
+      color: #2E6F40;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       COMPTEUR DE VISITES
+       ========================= */
+
+    #visites {
+
+      text-align: center;
+    }
+
+
+    .visit-counter {
+
+      max-width: 500px;
+
+      margin: 30px auto;
+
+      padding: 30px;
+
+      background: white;
+
+      border:
+        2px solid
+        #DCE8D8;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.10);
+    }
+
+
+    .visit-icon {
+
+      font-size: 3rem;
+
+      margin-bottom: 15px;
+    }
+
+
+    .visit-counter p {
+
+      margin-bottom: 20px;
+    }
+
+
+    .visit-counter img {
+
+      height: 30px;
+
+      margin: 10px auto;
+
+      display: block;
+    }
+
+
+    .visit-message {
+
+      margin-top: 20px;
+
+      font-size: 1rem !important;
+    }
+
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    #contact {
+
+      text-align: center;
+    }
+
+
+    .contact-box {
+
+      background: white;
+
+      border:
+        1px solid
+        #DCE8D8;
+
+      border-radius: 18px;
+
+      padding: 30px;
+
+      max-width: 700px;
+
+      margin: auto;
+
+      box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.08);
+    }
+
+
+    .contact-box a {
+
+      color: #2E6F40;
+
+      font-weight: bold;
+
+      text-decoration: none;
+    }
+
+
+    .contact-box a:hover {
+
+      color: #c7962a;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+
+      background: #0b4d2a;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 25px 15px;
+
+      margin-top: 30px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      nav a {
+
+        font-size: 0.9rem;
+
+        padding: 7px 9px;
+      }
+
+
+      .card img {
+
+        height: 240px;
+      }
+
+
+      .stars span {
+
+        font-size: 1.7rem;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS5X236V"
-          height="0"
-          width="0"
-          style="display:none;visibility:hidden">
-  </iframe>
-</noscript>
 
+  <!-- =========================
+       GOOGLE TAG MANAGER
+       ========================= -->
 
-<header>
+  <noscript>
 
-  <img src="images/veriboc_logo.jpg"
-       class="logo"
-       alt="Logo VERIHOP">
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-WS5X236V"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
 
-</header>
+  </noscript>
 
 
-<nav>
-  <a href="#bieres">Bières</a>
-  <a href="#collection">🏆 Collection</a>
-  <a href="presentation.html">Qui sommes nous ?</a>
-  <a href="houblonniere.html">Houblonnière</a>
-</nav>
+  <!-- =========================
+       HEADER
+       ========================= -->
 
+  <header>
 
+    <img
+      src="images/veriboc_logo.jpg"
+      class="logo"
+      alt="Logo VERIHOP">
 
-<!-- =========================
-     NOS BIERES
-========================= -->
+  </header>
 
-<section id="bieres">
 
-  <h2>Nos bières</h2>
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
 
-  <div class="cards">
+  <nav>
 
-
-    <!-- BIERE 1 -->
-
-    <div class="card">
-
-      <h3>L'Écume Tropicale</h3>
-
-      <img src="images/ecume_tropical.jpg"
-           class="biere1"
-           alt="Étiquette L'Écume Tropicale">
-
-      <p>
-Une bière aux notes exotiques et fruitées.
-
-🌴 Houblons : Sabro
-🍺 7.7°
-      </p>
-
-      <a href="recipe_ecume.pdf"
-         class="button"
-         download>
-        Télécharger la fiche PDF
-      </a>
-
-    </div>
-
-
-    <!-- BIERE 2 -->
-
-    <div class="card">
-
-      <h3>Si c'est de la bière</h3>
-
-      <img src="images/si_biere.jpg"
-           class="biere1"
-           alt="Étiquette Si c'est de la bière">
-
-      <p>
-De la framboise dans une bière ?
-Vous allez peut-être dire que ce n'est pas de la bière...
-
-Et pourtant, si !
-
-Une bière gourmande qui plaît au plus grand nombre.
-
-🍓 100 g/L de framboises
-🍋 Citron vert
-🥛 Lactose
-      </p>
-
-      <a href="recipe_si_biere.pdf"
-         class="button"
-         download>
-        Télécharger la fiche PDF
-      </a>
-
-    </div>
-
-
-    <!-- BIERE 3 -->
-
-    <div class="card">
-
-      <h3>Ostie d'bière</h3>
-
-      <img src="images/ostie.jpg"
-           class="biere1"
-           alt="Étiquette Ostie d'bière">
-
-      <p>
-Calice de Tabernacle !
-Du sirop d'érable dans une bière !
-
-🍁 25 ml/L de sirop d'érable ambré
-      </p>
-
-      <a href="recipe_ostie.pdf"
-         class="button"
-         download>
-        Télécharger la fiche PDF
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     COLLECTION VERIHOP
-========================= -->
-
-<section id="collection">
-
-
-  <p class="collection-intro">
-    Quelles bières as-tu déjà dégustées ?
-  </p>
-
-
-  <div class="beer-list">
-
-    <label class="beer-item">
-      <input type="checkbox"
-             class="beer-checkbox">
-      🍺 L'Écume Tropicale
-    </label>
-
-
-    <label class="beer-item">
-      <input type="checkbox"
-             class="beer-checkbox">
-      🍓 Si c'est de la bière
-    </label>
-
-
-    <label class="beer-item">
-      <input type="checkbox"
-             class="beer-checkbox">
-      🍁 Ostie d'bière
-    </label>
-
-  </div>
-
-
-  <div class="progress-container">
-
-    <div class="progress-bar"
-         id="progressBar">
-    </div>
-
-  </div>
-
-
-  <p id="progressText">
-    0 bière sur 3 dégustée 🍺
-  </p>
-
-
-  <p id="progressMessage">
-    Il faut remédier à ça ! 🍺
-  </p>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section id="contact">
-
-  <h2>Contact</h2>
-
-  <p>
-    📍 Sourdeval (50) & Le Vilhain (03), France
-    <br><br>
-
-    📧
-    <a href="mailto:veriboc@gmail.com">
-      veriboc@gmail.com
+    <a href="#bieres">
+      Bières
     </a>
 
-    <br><br>
-
-    <a href="https://untappd.com/BrasserieDesJonquilles?ref=followbtn">
-      <img src="https://assets.untappd.com/social/ut_follow_sm.png"
-           alt="Suivre VERIHOP sur Untappd">
+    <a href="#collection">
+      🏆 Collection
     </a>
 
-  </p>
+    <a href="#visites">
+      🍻 Visites
+    </a>
 
-</section>
+    <a href="presentation.html">
+      Qui sommes nous ?
+    </a>
 
+    <a href="houblonniere.html">
+      Houblonnière
+    </a>
 
-
-<footer>
-  © 2026 VERIHOP — Tous droits réservés.
-</footer>
-
-
-
-<!-- =========================
-     JAVASCRIPT COLLECTION
-========================= -->
-
-<script>
-
-const checkboxes = document.querySelectorAll(".beer-checkbox");
-
-const progressBar =
-  document.getElementById("progressBar");
-
-const progressText =
-  document.getElementById("progressText");
-
-const progressMessage =
-  document.getElementById("progressMessage");
+  </nav>
 
 
-/* Restaurer les choix précédents */
+  <!-- =========================
+       BIÈRES
+       ========================= -->
 
-checkboxes.forEach((checkbox, index) => {
+  <section id="bieres">
 
-  if (
-    localStorage.getItem("verihopBeer" + index) === "true"
-  ) {
-    checkbox.checked = true;
-  }
+    <h2>
+      Nos bières
+    </h2>
 
 
-  checkbox.addEventListener("change", function() {
+    <div class="cards">
 
-    localStorage.setItem(
-      "verihopBeer" + index,
-      checkbox.checked
+
+      <!-- =========================
+           ÉCUME TROPICALE
+           ========================= -->
+
+      <div class="card">
+
+        <img
+          src="images/ecume_tropical.jpg"
+          alt="L'Écume Tropicale">
+
+
+        <h3>
+          L'Écume Tropicale
+        </h3>
+
+
+        <p>
+          Une bière houblonnée aux notes
+          tropicales et fruitées.
+        </p>
+
+
+        <a
+          class="recipe-link"
+          href="recipe_ecume.pdf"
+          target="_blank">
+
+          📖 Voir la recette
+
+        </a>
+
+
+        <!-- NOTATION -->
+
+        <div
+          class="rating"
+          data-beer="ecume">
+
+          <div class="rating-title">
+            ⭐ Note cette bière
+          </div>
+
+
+          <div
+            class="stars"
+            aria-label="Noter L'Écume Tropicale">
+
+            <span data-rating="1">★</span>
+
+            <span data-rating="2">★</span>
+
+            <span data-rating="3">★</span>
+
+            <span data-rating="4">★</span>
+
+            <span data-rating="5">★</span>
+
+          </div>
+
+
+          <div class="rating-result">
+
+            <strong id="average-ecume">
+              —
+            </strong>
+
+            <span id="votes-ecume">
+              0 vote
+            </span>
+
+          </div>
+
+
+          <div
+            class="rating-message"
+            id="message-ecume">
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================
+           SI C'EST DE LA BIÈRE
+           ========================= -->
+
+      <div class="card">
+
+        <img
+          src="images/si_biere.jpg"
+          alt="Si c'est de la bière">
+
+
+        <h3>
+          Si c'est de la bière
+        </h3>
+
+
+        <p>
+          Une bière originale, généreuse
+          et pleine de caractère.
+        </p>
+
+
+        <a
+          class="recipe-link"
+          href="recipe_si_biere.pdf"
+          target="_blank">
+
+          📖 Voir la recette
+
+        </a>
+
+
+        <!-- NOTATION -->
+
+        <div
+          class="rating"
+          data-beer="si_biere">
+
+          <div class="rating-title">
+            ⭐ Note cette bière
+          </div>
+
+
+          <div
+            class="stars"
+            aria-label="Noter Si c'est de la bière">
+
+            <span data-rating="1">★</span>
+
+            <span data-rating="2">★</span>
+
+            <span data-rating="3">★</span>
+
+            <span data-rating="4">★</span>
+
+            <span data-rating="5">★</span>
+
+          </div>
+
+
+          <div class="rating-result">
+
+            <strong id="average-si_biere">
+              —
+            </strong>
+
+            <span id="votes-si_biere">
+              0 vote
+            </span>
+
+          </div>
+
+
+          <div
+            class="rating-message"
+            id="message-si_biere">
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================
+           OSTIE D'BIÈRE
+           ========================= -->
+
+      <div class="card">
+
+        <img
+          src="images/ostie.jpg"
+          alt="Ostie d'bière">
+
+
+        <h3>
+          Ostie d'bière
+        </h3>
+
+
+        <p>
+          Une bière de caractère,
+          inspirée du Bourbonnais.
+        </p>
+
+
+        <a
+          class="recipe-link"
+          href="recipe_ostie.pdf"
+          target="_blank">
+
+          📖 Voir la recette
+
+        </a>
+
+
+        <!-- NOTATION -->
+
+        <div
+          class="rating"
+          data-beer="ostie">
+
+          <div class="rating-title">
+            ⭐ Note cette bière
+          </div>
+
+
+          <div
+            class="stars"
+            aria-label="Noter Ostie d'bière">
+
+            <span data-rating="1">★</span>
+
+            <span data-rating="2">★</span>
+
+            <span data-rating="3">★</span>
+
+            <span data-rating="4">★</span>
+
+            <span data-rating="5">★</span>
+
+          </div>
+
+
+          <div class="rating-result">
+
+            <strong id="average-ostie">
+              —
+            </strong>
+
+            <span id="votes-ostie">
+              0 vote
+            </span>
+
+          </div>
+
+
+          <div
+            class="rating-message"
+            id="message-ostie">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       COLLECTION
+       ========================= -->
+
+  <section id="collection">
+
+    <p class="collection-intro">
+      🏆 Ma collection VERIHOP —
+      Quelles bières as-tu déjà dégustées ?
+    </p>
+
+
+    <div class="beer-list">
+
+
+      <label class="beer-item">
+
+        <input
+          type="checkbox"
+          class="beer-checkbox">
+
+        🍺 L'Écume Tropicale
+
+      </label>
+
+
+      <label class="beer-item">
+
+        <input
+          type="checkbox"
+          class="beer-checkbox">
+
+        🍓 Si c'est de la bière
+
+      </label>
+
+
+      <label class="beer-item">
+
+        <input
+          type="checkbox"
+          class="beer-checkbox">
+
+        🍁 Ostie d'bière
+
+      </label>
+
+    </div>
+
+
+    <div class="progress-container">
+
+      <div
+        class="progress-bar"
+        id="progressBar">
+      </div>
+
+    </div>
+
+
+    <p id="progressText">
+      0 bière sur 3 dégustée 🍺
+    </p>
+
+
+    <p id="progressMessage">
+      Qu'est-ce que tu attends ! 🍺
+    </p>
+
+  </section>
+
+
+
+  <!-- =========================
+       COMPTEUR DE VISITES
+       ========================= -->
+
+  <section id="visites">
+
+    <h2>
+      🍻 Bienvenue chez VERIHOP !
+    </h2>
+
+
+    <div class="visit-counter">
+
+      <div class="visit-icon">
+        🍺
+      </div>
+
+
+      <p>
+        Tu es le
+      </p>
+
+
+      <img
+        src="https://hits.sh/verihop.github.io.svg?style=for-the-badge&label=VISITES&color=c7962a&labelColor=2E6F40"
+        alt="Compteur de visites VERIHOP">
+
+
+      <p class="visit-message">
+        Merci de faire partie de l'aventure VERIHOP ! 🍻
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACT
+       ========================= -->
+
+  <section id="contact">
+
+    <h2>
+      Contact
+    </h2>
+
+
+    <div class="contact-box">
+
+      <p>
+        📍 Sourdeval (50) &amp; Le Vilhain (03), France
+      </p>
+
+
+      <p>
+        ✉️
+        <a href="mailto:veriboc@gmail.com">
+          veriboc@gmail.com
+        </a>
+      </p>
+
+
+      <p>
+        🍺
+        <a
+          href="https://untappd.com/"
+          target="_blank"
+          rel="noopener">
+
+          Retrouvez-nous sur Untappd
+
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    © 2026 VERIHOP — Tous droits réservés.
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       SUPABASE
+       ===================================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  </script>
+
+
+  <script>
+
+    /* =====================================================
+       ⚠️ À MODIFIER
+       ===================================================== */
+
+    const SUPABASE_URL =
+      "https://ggppqweconduxxsrbefz.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_IANN3eR5JzbYZx4hXVWhkg_21SDVGbz";
+
+
+    const supabaseClient =
+      supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+      );
+
+
+
+    /* =====================================================
+       LISTE DES BIÈRES
+       ===================================================== */
+
+    const beerNames = [
+      "ecume",
+      "si_biere",
+      "ostie"
+    ];
+
+
+
+    /* =====================================================
+       RÉCUPÉRER LES NOTES
+       ===================================================== */
+
+    async function loadRatings() {
+
+      const {
+        data,
+        error
+      } = await supabaseClient
+
+        .from("ratings")
+
+        .select("beer, rating");
+
+
+      if (error) {
+
+        console.error(
+          "Erreur récupération notes :",
+          error
+        );
+
+        return;
+      }
+
+
+      beerNames.forEach(beer => {
+
+
+        const ratings =
+          data
+
+            .filter(
+              row => row.beer === beer
+            )
+
+            .map(
+              row => row.rating
+            );
+
+
+        const numberOfVotes =
+          ratings.length;
+
+
+        let average = 0;
+
+
+        if (numberOfVotes > 0) {
+
+          average =
+            ratings.reduce(
+              (sum, value) =>
+                sum + value,
+              0
+            )
+            / numberOfVotes;
+
+        }
+
+
+        const averageElement =
+          document.getElementById(
+            "average-" + beer
+          );
+
+
+        const votesElement =
+          document.getElementById(
+            "votes-" + beer
+          );
+
+
+        if (numberOfVotes > 0) {
+
+          averageElement.textContent =
+            average.toFixed(1) +
+            " / 5";
+
+
+          votesElement.textContent =
+            numberOfVotes +
+            (
+              numberOfVotes > 1
+                ? " votes"
+                : " vote"
+            );
+
+        }
+
+        else {
+
+          averageElement.textContent =
+            "Pas encore notée";
+
+
+          votesElement.textContent =
+            "0 vote";
+
+        }
+
+
+        /* Afficher la note déjà donnée
+           sur cet appareil */
+
+        const previousRating =
+          localStorage.getItem(
+            "verihopRated_" + beer
+          );
+
+
+        if (previousRating) {
+
+          updateStars(
+            beer,
+            parseInt(previousRating)
+          );
+
+        }
+
+      });
+
+    }
+
+
+
+    /* =====================================================
+       AFFICHER LES ÉTOILES
+       ===================================================== */
+
+    function updateStars(
+      beer,
+      rating
+    ) {
+
+      const block =
+        document.querySelector(
+          '.rating[data-beer="' +
+          beer +
+          '"]'
+        );
+
+
+      if (!block) return;
+
+
+      const stars =
+        block.querySelectorAll(
+          ".stars span"
+        );
+
+
+      stars.forEach(star => {
+
+        const value =
+          parseInt(
+            star.dataset.rating
+          );
+
+
+        star.classList.toggle(
+          "active",
+          value <= rating
+        );
+
+      });
+
+    }
+
+
+
+    /* =====================================================
+       ENREGISTRER UNE NOTE
+       ===================================================== */
+
+    async function submitRating(
+      beer,
+      rating
+    ) {
+
+      const storageKey =
+        "verihopRated_" + beer;
+
+
+      /* Empêche de voter deux fois
+         depuis le même navigateur */
+
+      if (
+        localStorage.getItem(
+          storageKey
+        )
+      ) {
+
+        const message =
+          document.getElementById(
+            "message-" + beer
+          );
+
+
+        message.textContent =
+          "Tu as déjà noté cette bière 🍺";
+
+
+        return;
+      }
+
+
+      const {
+        error
+      } = await supabaseClient
+
+        .from("ratings")
+
+        .insert({
+
+          beer: beer,
+
+          rating: rating
+
+        });
+
+
+      if (error) {
+
+        console.error(
+          "Erreur envoi note :",
+          error
+        );
+
+
+        const message =
+          document.getElementById(
+            "message-" + beer
+          );
+
+
+        message.textContent =
+          "Une erreur est survenue. Réessaie !";
+
+
+        return;
+      }
+
+
+      /* Enregistrer localement
+         le fait que la personne a voté */
+
+      localStorage.setItem(
+        storageKey,
+        rating
+      );
+
+
+      updateStars(
+        beer,
+        rating
+      );
+
+
+      const message =
+        document.getElementById(
+          "message-" + beer
+        );
+
+
+      message.textContent =
+        "Merci pour ta note ! 🍻";
+
+
+      /* Actualiser les moyennes */
+
+      loadRatings();
+
+    }
+
+
+
+    /* =====================================================
+       INTERACTION AVEC LES ÉTOILES
+       ===================================================== */
+
+    document
+      .querySelectorAll(".rating")
+      .forEach(ratingBlock => {
+
+
+        const beer =
+          ratingBlock.dataset.beer;
+
+
+        const stars =
+          ratingBlock.querySelectorAll(
+            ".stars span"
+          );
+
+
+        stars.forEach(star => {
+
+
+          /* Survol */
+
+          star.addEventListener(
+            "mouseenter",
+            function() {
+
+
+              const value =
+                parseInt(
+                  this.dataset.rating
+                );
+
+
+              stars.forEach(s => {
+
+                const starValue =
+                  parseInt(
+                    s.dataset.rating
+                  );
+
+
+                s.classList.toggle(
+                  "active",
+                  starValue <= value
+                );
+
+              });
+
+            }
+          );
+
+
+          /* Clic */
+
+          star.addEventListener(
+            "click",
+            function() {
+
+
+              const value =
+                parseInt(
+                  this.dataset.rating
+                );
+
+
+              submitRating(
+                beer,
+                value
+              );
+
+            }
+          );
+
+        });
+
+
+        /* Lorsque la souris quitte
+           les étoiles */
+
+        ratingBlock
+          .querySelector(".stars")
+          .addEventListener(
+            "mouseleave",
+            function() {
+
+
+              const currentRating =
+                localStorage.getItem(
+                  "verihopRated_" +
+                  beer
+                );
+
+
+              stars.forEach(s => {
+
+
+                const value =
+                  parseInt(
+                    s.dataset.rating
+                  );
+
+
+                s.classList.toggle(
+                  "active",
+                  currentRating &&
+                  value <=
+                  parseInt(
+                    currentRating
+                  )
+                );
+
+              });
+
+            }
+          );
+
+      });
+
+
+
+    /* =====================================================
+       COLLECTION VERIHOP
+       ===================================================== */
+
+    const checkboxes =
+      document.querySelectorAll(
+        ".beer-checkbox"
+      );
+
+
+    const progressBar =
+      document.getElementById(
+        "progressBar"
+      );
+
+
+    const progressText =
+      document.getElementById(
+        "progressText"
+      );
+
+
+    const progressMessage =
+      document.getElementById(
+        "progressMessage"
+      );
+
+
+    checkboxes.forEach(
+      (checkbox, index) => {
+
+
+        if (
+          localStorage.getItem(
+            "verihopBeer" + index
+          ) === "true"
+        ) {
+
+          checkbox.checked = true;
+
+        }
+
+
+        checkbox.addEventListener(
+          "change",
+          function() {
+
+
+            localStorage.setItem(
+              "verihopBeer" + index,
+              checkbox.checked
+            );
+
+
+            updateProgress();
+
+          }
+        );
+
+      }
     );
+
+
+    function updateProgress() {
+
+
+      const total =
+        checkboxes.length;
+
+
+      const checked =
+        document.querySelectorAll(
+          ".beer-checkbox:checked"
+        ).length;
+
+
+      const percentage =
+        (
+          checked / total
+        ) * 100;
+
+
+      progressBar.style.width =
+        percentage + "%";
+
+
+      progressText.textContent =
+        checked +
+        " bière" +
+        (
+          checked > 1
+            ? "s"
+            : ""
+        ) +
+        " sur " +
+        total +
+        " dégustée" +
+        (
+          checked > 1
+            ? "s"
+            : ""
+        ) +
+        " 🍺";
+
+
+      if (checked === 0) {
+
+        progressMessage.textContent =
+          "Qu'est-ce que tu attends ! 🍺";
+
+      }
+
+      else if (checked === 1) {
+
+        progressMessage.textContent =
+          "🥉 Amateur VERIHOP !";
+
+      }
+
+      else if (checked === 2) {
+
+        progressMessage.textContent =
+          "🥈 Connaisseur VERIHOP ! Plus qu'une bière !";
+
+      }
+
+      else {
+
+        progressMessage.textContent =
+          "🏆 Légende VERIHOP ! Vous avez goûté toute la collection ! 🍻🎉";
+
+      }
+
+    }
+
 
     updateProgress();
 
-  });
 
-});
+    /* =====================================================
+       CHARGEMENT INITIAL DES NOTES
+       ===================================================== */
 
+    loadRatings();
 
-/* Mettre à jour la progression */
-
-function updateProgress() {
-
-  const total = checkboxes.length;
-
-  const checked =
-    document.querySelectorAll(
-      ".beer-checkbox:checked"
-    ).length;
-
-
-  const percentage =
-    (checked / total) * 100;
-
-
-  progressBar.style.width =
-    percentage + "%";
-
-
-  progressText.textContent =
-    checked +
-    " bière(s) sur " +
-    total +
-    " dégustée(s) 🍺";
-
-
-  /* Messages et badges */
-
-  if (checked === 0) {
-
-    progressMessage.textContent =
-      "Qu'est ce que tu attends ! ";
-
-  }
-
-  else if (checked === 1) {
-
-    progressMessage.textContent =
-      "🥉 Amateur VERIHOP en devenir !";
-
-  }
-
-  else if (checked === 2) {
-
-    progressMessage.textContent =
-      "🥈 Connaisseur VERIHOP ! Plus qu'une bière !";
-
-  }
-
-  else {
-
-    progressMessage.textContent =
-      "🏆 Légende VERIHOP ! Vous avez goûté toute la collection ! 🍻🎉";
-
-  }
-
-}
-
-
-/* Lancer la progression au chargement */
-
-updateProgress();
-
-</script>
+  </script>
 
 
 </body>
+
 </html>
+```
