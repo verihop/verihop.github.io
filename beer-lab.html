@@ -20,6 +20,13 @@
     gtag('config', 'G-ER7JY9X28T');
   </script>
 
+
+    <!-- =========================
+       SUPABASE
+       ========================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <meta charset="UTF-8">
 
   <meta name="viewport"
@@ -33,6 +40,8 @@
 
   <meta name="author"
         content="VERIHOP">
+
+
 
   <title>VERIHOP | Beer Lab 🧪</title>
 
@@ -1225,6 +1234,34 @@
     </div>
 
   </section>
+<!-- =========================
+       MUR DES PROPOSITIONS
+       ========================= -->
+
+  <section>
+
+    <div class="panel">
+
+      <h2>
+        📌 Propositions récentes
+      </h2>
+
+
+      <div
+        class="wall-list"
+        id="wallList">
+
+        <p class="wall-loading">
+
+          Chargement...
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- =========================
@@ -1388,6 +1425,28 @@
 
     }
 
+       /* =====================================================
+       SUPABASE
+       ===================================================== */
+
+
+
+    const SUPABASE_URL =
+      "https://kezdmoybnuswjtdvpmqv.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+      "sb_publishable_ctMhvefmZVySxT43Pyb3xQ_tPFqXr9v";
+
+
+    const supabase =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+      );
+
+
+    const TABLE_NAME =
+      "beer_proposals";
 
     /* =====================================================
        ELEMENTS
@@ -1584,35 +1643,24 @@ Envoyé depuis le VERIHOP Beer Lab`
     }
 
 
-    /* =====================================================
-       COPIER
+   /* =====================================================
+       ENVOYER (SUPABASE)
        ===================================================== */
 
-    async function copyProposal() {
+    function showConfirm(
+      message,
+      isError
+    ) {
 
-      const text =
-        buildProposalText();
-
-
-      try {
-
-        await navigator
-          .clipboard
-          .writeText(text);
+      confirmMsg.textContent =
+        message;
 
 
-        confirmMsg.textContent =
-          "✅ Proposition copiée !";
-
-      }
-
-      catch (error) {
-
-        confirmMsg.textContent =
-          "⚠️ Copie impossible, " +
-          "sélectionne le texte manuellement.";
-
-      }
+      confirmMsg.classList
+        .toggle(
+          "error",
+          !!isError
+        );
 
 
       setTimeout(
@@ -1621,18 +1669,17 @@ Envoyé depuis le VERIHOP Beer Lab`
           confirmMsg.textContent =
             "";
 
+          confirmMsg.classList
+            .remove("error");
+
         },
-        2500
+        3500
       );
 
     }
 
 
-    /* =====================================================
-       ENVOYER (MAILTO)
-       ===================================================== */
-
-    function submitProposal() {
+    async function submitProposal() {
 
       const name =
         nameInput.value.trim();
@@ -1640,9 +1687,11 @@ Envoyé depuis le VERIHOP Beer Lab`
 
       if (!name) {
 
-        confirmMsg.textContent =
+        showConfirm(
           "⚠️ Donne d'abord un nom " +
-          "à ta bière.";
+          "à ta bière.",
+          true
+        );
 
 
         nameInput.focus();
@@ -1653,30 +1702,188 @@ Envoyé depuis le VERIHOP Beer Lab`
       }
 
 
-      const subject =
-        encodeURIComponent(
-          "Proposition de bière : " +
-          name
+      const submitBtn =
+        document.getElementById(
+          "submitBtn"
         );
 
 
-      const body =
-        encodeURIComponent(
-          buildProposalText()
+      submitBtn.disabled = true;
+
+      submitBtn.textContent =
+        "⏳ Envoi...";
+
+
+      const { error } =
+        await supabase
+
+          .from(TABLE_NAME)
+
+          .insert([{
+
+            name: name,
+
+            ebc:
+              parseInt(
+                ebcSlider.value,
+                10
+              ),
+
+            abv:
+              parseFloat(
+                abvSlider.value
+              )
+
+          }]);
+
+
+      submitBtn.disabled = false;
+
+      submitBtn.textContent =
+        "📮 Envoyer ma proposition";
+
+
+      if (error) {
+
+        console.error(error);
+
+        showConfirm(
+          "⚠️ Envoi impossible : " +
+          error.message,
+          true
         );
 
+        return;
 
-      window.location.href =
-        "mailto:contact@verihop.fr" +
-        "?subject=" + subject +
-        "&body=" + body;
+      }
 
 
-      confirmMsg.textContent =
-        "📮 Ton client mail s'ouvre " +
-        "avec ta proposition...";
+      showConfirm(
+        "✅ Proposition envoyée, merci !",
+        false
+      );
+
+
+      loadProposals();
 
     }
+ /* =====================================================
+       MUR DES PROPOSITIONS
+       ===================================================== */
+
+    async function loadProposals() {
+
+      const { data, error } =
+        await supabase
+
+          .from(TABLE_NAME)
+
+          .select(
+            "name, ebc, abv, created_at"
+          )
+
+          .order(
+            "created_at",
+            { ascending: false }
+          )
+
+          .limit(24);
+
+
+      if (error) {
+
+        console.error(error);
+
+        wallList.innerHTML = `
+
+          <p class="wall-empty">
+
+            ⚠️ Impossible de charger
+            les propositions.
+
+          </p>
+
+        `;
+
+        return;
+
+      }
+
+
+      if (
+        !data ||
+        data.length === 0
+      ) {
+
+        wallList.innerHTML = `
+
+          <p class="wall-empty">
+
+            Aucune proposition pour
+            le moment, sois le premier
+            à en envoyer une 🍺
+
+          </p>
+
+        `;
+
+        return;
+
+      }
+
+
+      wallList.innerHTML =
+        data
+
+          .map(
+            row => {
+
+              const abv =
+                parseFloat(row.abv)
+                  .toFixed(1)
+                  .replace(".", ",");
+
+
+              return `
+
+                <div class="wall-card">
+
+                  <div
+                    class="wall-swatch"
+                    style="background:${ebcToColor(row.ebc)};">
+                  </div>
+
+
+                  <div>
+
+                    <div class="wall-name">
+
+                      ${escapeHTML(row.name)}
+
+                    </div>
+
+
+                    <div class="wall-meta">
+
+                      ${row.ebc} EBC
+                      ·
+                      ${abv} %
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              `;
+
+            }
+          )
+
+          .join("");
+
+    }
+
 
 
     /* =====================================================
