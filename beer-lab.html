@@ -731,11 +731,7 @@
             <p class="field-hint" id="hopLevelHint">Aucun niveau sélectionné.</p>
           </div>
 
-          <div class="aroma-counter">
-            <span><strong id="aromaCount">0</strong> / 3 sélectionné(s)</span>
-            <span id="aromaError" class="aroma-error"></span>
-          </div>
-        </div>
+   
 
         <!-- AUTRE INGREDIENT -->
         <div class="field other-ingredient-group">
@@ -1033,9 +1029,13 @@
 
       if (hopLevelHint) hopLevelHint.textContent = labels[level];
 
-      if (hopPreview) {
-        hopPreview.textContent = level ? '<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(level) : "";
-      }
+     if (hopPreview) {
+    const n = Number(level) || 0;
+
+    hopPreview.innerHTML = n
+        ? '<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(n)
+        : "";
+}
 
       hopLevelButtons.forEach(button => {
         button.classList.toggle(
@@ -1112,7 +1112,7 @@
         `Couleur : ${ebc} EBC\n` +
         `Taux d'alcool : ${abv} %\n` +
         `Profil aromatique : ${aromas.join(", ")}\n` +
-        `Niveau de houblon : ${hopLevel ? `${hopLevel}/5 ${'<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(hopLevel)}` : "Non renseigné"}\n` +
+        `Niveau de houblon : ${hopLevel ? `${hopLevel}/5 ${'<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(hopLevel)}` : "Non renseigné"}\n`
         `Autre ingrédient : ${otherIngredient || "Aucun"}\n\n` +
         `Brasseur(s) : ${brewers || "Non renseigné"}\n\n`+
         `Envoyé depuis le VERIHOP Beer Lab`
@@ -1240,7 +1240,12 @@
                     ${aromas.slice(0, 3).map(aroma => `<span class="wall-aroma">${escapeHTML(aroma)}</span>`).join("")}
                   </div>` : ""}
                 ${row.hop_level ? `
-                  <div class="wall-hops">${'<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(Math.min(Math.max(Number(row.hop_level), 1), 5))} · Houblon ${Number(row.hop_level)}/5</div>` : ""}
+  <div class="wall-hops"> ${'<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(
+      Math.min(Math.max(Number(row.hop_level), 1), 5)
+    )}
+    · Houblon ${Math.min(Math.max(Number(row.hop_level), 1), 5)}/5
+  </div>
+` : ""}
                 ${row.other_ingredient ? `
                   <div class="wall-ingredient">🧪 ${escapeHTML(row.other_ingredient)}</div>` : ""}
               </div>
