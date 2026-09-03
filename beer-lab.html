@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <!-- =========================
+       GOOGLE ANALYTICS
+       ========================= -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER7JY9X28T"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-ER7JY9X28T');
+  </script>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="VERIHOP Beer Lab : propose ta bière imaginaire — un nom, une couleur (EBC) et un taux d'alcool.">
+
+  <meta name="keywords"
+        content="VERIHOP, Beer Lab, bière artisanale, proposer bière, EBC, ABV">
+
+  <meta name="author"
+        content="VERIHOP">
+
+  <title>VERIHOP | Beer Lab 🧪</title>
+
+
+  <!-- =========================
+       STYLE
+       ========================= -->
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #f7f4ec;
+
+      color: #204020;
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+
+      background:
+        linear-gradient(
+          135deg,
+          #4F8A54,
+          #2E6F40
+        );
+
+      padding: 25px 20px;
+
+      text-align: center;
+    }
+
+
+    .logo {
+
+      max-width: 220px;
+
+      width: 80%;
+
+      height: auto;
+
+      border-radius: 10px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav {
+
+      background: #2E6F40;
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      padding: 12px;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+    }
+
+
+    nav a {
+
+      color: #c7962a;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      padding: 8px 14px;
+
+      border-radius: 8px;
+
+      transition: 0.2s;
+    }
+
+
+    nav a:hover,
+    nav a.active {
+
+      background: rgba(255,255,255,0.12);
+
+      color: white;
+    }
+
+
+    /* =========================
+       SECTIONS
+       ========================= */
+
+    section {
+
+      max-width: 1150px;
+
+      margin: 0 auto;
+
+      padding: 45px 20px;
+    }
+
+
+    h1,
+    h2 {
+
+      text-align: center;
+
+      color: #0b4d2a;
+    }
+
+
+    h1 {
+
+      font-size:
+        clamp(
+          2rem,
+          5vw,
+          3rem
+        );
+
+      margin:
+        0 0 10px;
+    }
+
+
+    h2 {
+
+      margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .lab-hero {
+
+      padding-top: 55px;
+
+      padding-bottom: 35px;
+    }
+
+
+    .lab-badge {
+
+      display: inline-block;
+
+      background: #c7962a;
+
+      color: white;
+
+      font-weight: bold;
+
+      padding: 6px 14px;
+
+      border-radius: 30px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .hero-subtitle {
+
+      text-align: center;
+
+      color: #666;
+
+      margin-top: 0;
+
+      max-width: 600px;
+
+      margin-left: auto;
+
+      margin-right: auto;
+    }
+
+
+    /* =========================
+       LAYOUT
+       ========================= */
+
+    .lab-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(300px, 0.85fr);
+
+      gap: 25px;
+
+      align-items: start;
+    }
+
+
+    .panel {
+
+      background: white;
+
+      border:
+        1px solid
+        #DCE8D8;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.10);
+
+      padding: 28px;
+    }
+
+
+    .panel h2 {
+
+      text-align: left;
+
+      margin-top: 0;
+
+      margin-bottom: 22px;
+    }
+
+
+    /* =========================
+       CHAMPS
+       ========================= */
+
+    .field {
+
+      margin-bottom: 26px;
+    }
+
+
+    label.field-label {
+
+      display: block;
+
+      font-weight: bold;
+
+      color: #204020;
+
+      margin-bottom: 8px;
+    }
+
+
+    .field-hint {
+
+      color: #777;
+
+      font-size: 0.82rem;
+
+      margin: 4px 0 0;
+    }
+
+
+    input[type="text"] {
+
+      width: 100%;
+
+      border:
+        1px solid
+        #cfdcc9;
+
+      border-radius: 10px;
+
+      padding: 12px 14px;
+
+      background: white;
+
+      color: #204020;
+
+      font-size: 1.05rem;
+
+      outline: none;
+
+      transition: 0.2s;
+    }
+
+
+    input[type="text"]:focus {
+
+      border-color: #4F8A54;
+
+      box-shadow:
+        0 0 0 3px
+        rgba(79,138,84,0.12);
+    }
+
+
+    /* =========================
+       CURSEUR EBC
+       ========================= */
+
+    .slider-row {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+    }
+
+
+    input[type="range"] {
+
+      -webkit-appearance: none;
+
+      appearance: none;
+
+      flex: 1;
+
+      height: 16px;
+
+      border-radius: 10px;
+
+      outline: none;
+
+      border:
+        1px solid
+        rgba(0,0,0,0.12);
+    }
+
+
+    #ebcSlider {
+
+      background: linear-gradient(
+        to right,
+        #ffe699 0%,
+        #ffd878 8%,
+        #ffca5a 15%,
+        #ffbf42 20%,
+        #fbb123 25%,
+        #f8a600 30%,
+        #f39c00 35%,
+        #ea8f00 42%,
+        #e58500 48%,
+        #d77800 55%,
+        #cb6600 62%,
+        #c1590a 68%,
+        #b94e14 74%,
+        #8a3a12 82%,
+        #692a0f 90%,
+        #3f1a0a 96%,
+        #1a0d06 100%
+      );
+    }
+
+
+    #abvSlider {
+
+      background: linear-gradient(
+        to right,
+        #eef4eb 0%,
+        #b9dcc2 40%,
+        #4F8A54 75%,
+        #0b4d2a 100%
+      );
+    }
+
+
+    input[type="range"]::-webkit-slider-thumb {
+
+      -webkit-appearance: none;
+
+      appearance: none;
+
+      width: 26px;
+
+      height: 26px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      border: 3px solid #2E6F40;
+
+      box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.25);
+
+      cursor: pointer;
+
+      margin-top: -1px;
+    }
+
+
+    input[type="range"]::-moz-range-thumb {
+
+      width: 26px;
+
+      height: 26px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      border: 3px solid #2E6F40;
+
+      box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.25);
+
+      cursor: pointer;
+    }
+
+
+    .slider-value {
+
+      min-width: 70px;
+
+      text-align: center;
+
+      font-weight: bold;
+
+      color: #2E6F40;
+
+      background: #eef4eb;
+
+      border-radius: 10px;
+
+      padding: 8px 6px;
+
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================
+       BOUTONS
+       ========================= */
+
+    .button-row {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 8px;
+    }
+
+
+    .btn {
+
+      border: 0;
+
+      border-radius: 10px;
+
+      padding: 12px 18px;
+
+      cursor: pointer;
+
+      font-weight: bold;
+
+      font-size: 0.95rem;
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+
+    .btn:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 5px 12px
+        rgba(0,0,0,0.12);
+    }
+
+
+    .btn-primary {
+
+      background: #2E6F40;
+
+      color: white;
+    }
+
+
+    .btn-primary:hover {
+
+      background: #0b4d2a;
+    }
+
+
+    .btn-gold {
+
+      background: #c7962a;
+
+      color: white;
+    }
+
+
+    .btn-light {
+
+      background: #eef4eb;
+
+      color: #2E6F40;
+    }
+
+
+    /* =========================
+       APERCU
+       ========================= */
+
+    .result-card {
+
+      position: sticky;
+
+      top: 80px;
+
+      overflow: hidden;
+
+      text-align: center;
+    }
+
+
+    .recipe-name {
+
+      font-size: 1.6rem;
+
+      color: #2E6F40;
+
+      font-weight: bold;
+
+      margin:
+        5px 0 4px;
+
+      min-height: 1.4em;
+
+      word-break: break-word;
+    }
+
+
+    .recipe-placeholder {
+
+      color: #aaa;
+
+      font-style: italic;
+    }
+
+
+    /* =========================
+       BOUTEILLE
+       ========================= */
+
+    .bottle-area {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: end;
+
+      height: 210px;
+
+      margin: 15px 0 20px;
+
+      position: relative;
+    }
+
+
+    .bottle {
+
+      width: 75px;
+
+      height: 165px;
+
+      background: #ffe699;
+
+      border-radius:
+        13px 13px 10px 10px;
+
+      position: relative;
+
+      box-shadow:
+        inset -7px 0 8px
+        rgba(0,0,0,0.22),
+        5px 8px 15px
+        rgba(0,0,0,0.18);
+
+      transition:
+        background 0.3s ease;
+    }
+
+
+    .bottle::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: -28px;
+
+      left: 21px;
+
+      width: 33px;
+
+      height: 35px;
+
+      background: #3b2415;
+
+      border-radius:
+        5px 5px 2px 2px;
+    }
+
+
+    .bottle::after {
+
+      content: "";
+
+      position: absolute;
+
+      top: 48px;
+
+      left: 7px;
+
+      width: 61px;
+
+      height: 55px;
+
+      background: #f7f4ec;
+
+      border-radius: 5px;
+    }
+
+
+    .bottle-label {
+
+      position: absolute;
+
+      z-index: 2;
+
+      top: 58px;
+
+      left: 13px;
+
+      width: 49px;
+
+      text-align: center;
+
+      color: #2E6F40;
+
+      font-size: 0.55rem;
+
+      font-weight: bold;
+
+      line-height: 1.1;
+    }
+
+
+    /* =========================
+       METRIQUES
+       ========================= */
+
+    .metrics {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 10px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .metric {
+
+      background: #f7f4ec;
+
+      border:
+        1px solid
+        #DCE8D8;
+
+      border-radius: 12px;
+
+      padding: 13px;
+
+      text-align: center;
+    }
+
+
+    .metric-value {
+
+      display: block;
+
+      color: #2E6F40;
+
+      font-size: 1.35rem;
+
+      font-weight: bold;
+    }
+
+
+    .metric-label {
+
+      color: #777;
+
+      font-size: 0.78rem;
+    }
+
+
+    /* =========================
+       NOTICE
+       ========================= */
+
+    .notice {
+
+      margin-top: 15px;
+
+      color: #777;
+
+      font-size: 0.75rem;
+
+      text-align: center;
+    }
+
+
+    .confirm-msg {
+
+      margin-top: 12px;
+
+      color: #23713a;
+
+      font-weight: bold;
+
+      font-size: 0.9rem;
+
+      min-height: 1.2em;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+
+      background: #0b4d2a;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 25px 15px;
+
+      margin-top: 30px;
+    }
+
+
+    footer a {
+
+      color: #c7962a;
+
+      text-decoration: none;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 850px) {
+
+      .lab-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .result-card {
+
+        position: static;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      nav a {
+
+        font-size: 0.9rem;
+
+        padding: 7px 9px;
+      }
+
+
+      section {
+
+        padding:
+          35px 15px;
+      }
+
+
+      .panel {
+
+        padding: 18px;
+      }
+
+
+      .button-row .btn {
+
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       GOOGLE TAG MANAGER
+       ========================= -->
+
+  <noscript>
+
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-WS5X236V"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+
+  </noscript>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header>
+
+    <img
+      src="images/veriboc_logo.jpg"
+      class="logo"
+      alt="Logo VERIHOP">
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <nav>
+
+    <a href="index.html">
+      🍺 Bières
+    </a>
+
+    <a href="presentation.html">
+      Qui sommes nous ?
+    </a>
+
+    <a href="houblonniere.html">
+      Houblonnière
+    </a>
+
+    <a
+      href="beer-lab.html"
+      class="active">
+      🧪 Beer Lab
+    </a>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <section class="lab-hero">
+
+    <div style="text-align:center;">
+
+      <span class="lab-badge">
+        🧪 VERIHOP BEER LAB
+      </span>
+
+    </div>
+
+
+    <h1>
+      Propose ta bière
+    </h1>
+
+
+    <p class="hero-subtitle">
+
+      Donne-lui un nom, choisis sa couleur
+      et son taux d'alcool. On regarde
+      toutes les propositions 👀
+
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       BEER LAB
+       ========================= -->
+
+  <section>
+
+    <div class="lab-grid">
+
+
+      <!-- =========================
+           FORMULAIRE
+           ========================= -->
+
+      <div class="panel">
+
+        <h2>
+          ⚗️ Ta proposition
+        </h2>
+
+
+        <!-- NOM -->
+
+        <div class="field">
+
+          <label
+            class="field-label"
+            for="nameInput">
+
+            Nom de la bière
+
+          </label>
+
+
+          <input
+            id="nameInput"
+            type="text"
+            maxlength="40"
+            placeholder="Ex. La Furieuse des Houblons">
+
+        </div>
+
+
+        <!-- EBC -->
+
+        <div class="field">
+
+          <label
+            class="field-label"
+            for="ebcSlider">
+
+            Couleur (EBC)
+
+          </label>
+
+
+          <div class="slider-row">
+
+            <input
+              id="ebcSlider"
+              type="range"
+              min="2"
+              max="160"
+              step="1"
+              value="20">
+
+            <span
+              class="slider-value"
+              id="ebcValue">
+
+              20 EBC
+
+            </span>
+
+          </div>
+
+
+          <p class="field-hint">
+
+            De blonde très pâle (gauche)
+            à noire type stout (droite).
+
+          </p>
+
+        </div>
+
+
+        <!-- ABV -->
+
+        <div class="field">
+
+          <label
+            class="field-label"
+            for="abvSlider">
+
+            Taux d'alcool (ABV)
+
+          </label>
+
+
+          <div class="slider-row">
+
+            <input
+              id="abvSlider"
+              type="range"
+              min="0"
+              max="15"
+              step="0.1"
+              value="5">
+
+            <span
+              class="slider-value"
+              id="abvValue">
+
+              5,0 %
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="button-row">
+
+          <button
+            class="btn btn-primary"
+            id="submitBtn">
+
+            📮 Envoyer ma proposition
+
+          </button>
+
+
+          <button
+            class="btn btn-light"
+            id="copyBtn">
+
+            📋 Copier
+
+          </button>
+
+
+          <button
+            class="btn btn-light"
+            id="clearBtn">
+
+            🗑️ Recommencer
+
+          </button>
+
+        </div>
+
+
+        <p
+          class="confirm-msg"
+          id="confirmMsg">
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           APERCU
+           ========================= -->
+
+      <div
+        class="panel result-card">
+
+        <h2>
+          🍻 Aperçu
+        </h2>
+
+
+        <div
+          class="recipe-name"
+          id="recipeName">
+
+          <span class="recipe-placeholder">
+            Donne-lui un nom...
+          </span>
+
+        </div>
+
+
+        <div class="bottle-area">
+
+          <div
+            class="bottle"
+            id="bottle">
+
+            <div
+              class="bottle-label"
+              id="bottleLabel">
+
+              VERIHOP<br>
+              BEER LAB
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="metrics">
+
+          <div class="metric">
+
+            <span
+              class="metric-value"
+              id="ebcMetric">
+
+              20
+
+            </span>
+
+            <span class="metric-label">
+              EBC
+            </span>
+
+          </div>
+
+
+          <div class="metric">
+
+            <span
+              class="metric-value"
+              id="abvMetric">
+
+              5,0 %
+
+            </span>
+
+            <span class="metric-label">
+              ABV
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <p class="notice">
+
+          📮 En cliquant sur "Envoyer",
+          ta proposition s'ouvre dans ton
+          client mail pour nous être
+          transmise directement.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    © 2026 VERIHOP — Tous droits réservés.<br>
+
+    <a href="index.html">
+      ← Retour aux bières
+    </a>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       DEGRADE EBC -> COULEUR
+       ===================================================== */
+
+    const EBC_STOPS = [
+
+      [2,   "#ffe699"],
+      [4,   "#ffd878"],
+      [6,   "#ffca5a"],
+      [8,   "#ffbf42"],
+      [10,  "#fbb123"],
+      [14,  "#f8a600"],
+      [18,  "#f39c00"],
+      [24,  "#ea8f00"],
+      [30,  "#e58500"],
+      [38,  "#d77800"],
+      [48,  "#cb6600"],
+      [60,  "#c1590a"],
+      [75,  "#b94e14"],
+      [100, "#8a3a12"],
+      [130, "#692a0f"],
+      [160, "#1a0d06"]
+
+    ];
+
+
+    function hexToRgb(hex) {
+
+      const value =
+        hex.replace("#", "");
+
+
+      return [
+
+        parseInt(
+          value.substring(0,2),
+          16
+        ),
+
+        parseInt(
+          value.substring(2,4),
+          16
+        ),
+
+        parseInt(
+          value.substring(4,6),
+          16
+        )
+
+      ];
+
+    }
+
+
+    function rgbToHex(r, g, b) {
+
+      const toHex =
+        v =>
+          Math.round(v)
+            .toString(16)
+            .padStart(2, "0");
+
+
+      return (
+        "#" +
+        toHex(r) +
+        toHex(g) +
+        toHex(b)
+      );
+
+    }
+
+
+    function ebcToColor(ebc) {
+
+      let lower = EBC_STOPS[0];
+
+      let upper =
+        EBC_STOPS[
+          EBC_STOPS.length - 1
+        ];
+
+
+      for (
+        let i = 0;
+        i < EBC_STOPS.length - 1;
+        i++
+      ) {
+
+        if (
+          ebc >= EBC_STOPS[i][0] &&
+          ebc <= EBC_STOPS[i+1][0]
+        ) {
+
+          lower = EBC_STOPS[i];
+
+          upper = EBC_STOPS[i+1];
+
+          break;
+
+        }
+
+      }
+
+
+      const [r1, g1, b1] =
+        hexToRgb(lower[1]);
+
+
+      const [r2, g2, b2] =
+        hexToRgb(upper[1]);
+
+
+      const range =
+        upper[0] - lower[0] || 1;
+
+
+      const ratio =
+        Math.min(
+          Math.max(
+            (ebc - lower[0]) / range,
+            0
+          ),
+          1
+        );
+
+
+      return rgbToHex(
+
+        r1 + (r2 - r1) * ratio,
+
+        g1 + (g2 - g1) * ratio,
+
+        b1 + (b2 - b1) * ratio
+
+      );
+
+    }
+
+
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
+
+    const nameInput =
+      document.getElementById(
+        "nameInput"
+      );
+
+
+    const ebcSlider =
+      document.getElementById(
+        "ebcSlider"
+      );
+
+
+    const abvSlider =
+      document.getElementById(
+        "abvSlider"
+      );
+
+
+    const ebcValue =
+      document.getElementById(
+        "ebcValue"
+      );
+
+
+    const abvValue =
+      document.getElementById(
+        "abvValue"
+      );
+
+
+    const ebcMetric =
+      document.getElementById(
+        "ebcMetric"
+      );
+
+
+    const abvMetric =
+      document.getElementById(
+        "abvMetric"
+      );
+
+
+    const recipeName =
+      document.getElementById(
+        "recipeName"
+      );
+
+
+    const bottle =
+      document.getElementById(
+        "bottle"
+      );
+
+
+    const bottleLabel =
+      document.getElementById(
+        "bottleLabel"
+      );
+
+
+    const confirmMsg =
+      document.getElementById(
+        "confirmMsg"
+      );
+
+
+    function escapeHTML(value) {
+
+      return String(value)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+    }
+
+
+    /* =====================================================
+       MISE A JOUR APERCU
+       ===================================================== */
+
+    function updatePreview() {
+
+      const name =
+        nameInput.value.trim();
+
+
+      const ebc =
+        parseFloat(
+          ebcSlider.value
+        );
+
+
+      const abv =
+        parseFloat(
+          abvSlider.value
+        );
+
+
+      const abvText =
+        abv.toFixed(1)
+          .replace(".", ",") +
+        " %";
+
+
+      ebcValue.textContent =
+        ebc + " EBC";
+
+
+      abvValue.textContent =
+        abvText;
+
+
+      ebcMetric.textContent =
+        ebc;
+
+
+      abvMetric.textContent =
+        abvText;
+
+
+      const color =
+        ebcToColor(ebc);
+
+
+      bottle.style.background =
+        color;
+
+
+      recipeName.innerHTML =
+        name
+          ? escapeHTML(name)
+          : '<span class="recipe-placeholder">Donne-lui un nom...</span>';
+
+
+      bottleLabel.innerHTML =
+        "VERIHOP<br>" +
+        (
+          name
+            ? escapeHTML(
+                name.slice(0, 16)
+              )
+            : "BEER LAB"
+        );
+
+    }
+
+
+    /* =====================================================
+       TEXTE DE LA PROPOSITION
+       ===================================================== */
+
+    function buildProposalText() {
+
+      const name =
+        nameInput.value.trim() ||
+        "Sans nom";
+
+
+      const ebc =
+        ebcSlider.value;
+
+
+      const abv =
+        parseFloat(
+          abvSlider.value
+        )
+          .toFixed(1)
+          .replace(".", ",");
+
+
+      return (
+
+`🍺 Proposition de bière — ${name}
+
+Couleur : ${ebc} EBC
+Taux d'alcool : ${abv} %
+
+Envoyé depuis le VERIHOP Beer Lab`
+
+      );
+
+    }
+
+
+    /* =====================================================
+       COPIER
+       ===================================================== */
+
+    async function copyProposal() {
+
+      const text =
+        buildProposalText();
+
+
+      try {
+
+        await navigator
+          .clipboard
+          .writeText(text);
+
+
+        confirmMsg.textContent =
+          "✅ Proposition copiée !";
+
+      }
+
+      catch (error) {
+
+        confirmMsg.textContent =
+          "⚠️ Copie impossible, " +
+          "sélectionne le texte manuellement.";
+
+      }
+
+
+      setTimeout(
+        () => {
+
+          confirmMsg.textContent =
+            "";
+
+        },
+        2500
+      );
+
+    }
+
+
+    /* =====================================================
+       ENVOYER (MAILTO)
+       ===================================================== */
+
+    function submitProposal() {
+
+      const name =
+        nameInput.value.trim();
+
+
+      if (!name) {
+
+        confirmMsg.textContent =
+          "⚠️ Donne d'abord un nom " +
+          "à ta bière.";
+
+
+        nameInput.focus();
+
+
+        return;
+
+      }
+
+
+      const subject =
+        encodeURIComponent(
+          "Proposition de bière : " +
+          name
+        );
+
+
+      const body =
+        encodeURIComponent(
+          buildProposalText()
+        );
+
+
+      window.location.href =
+        "mailto:contact@verihop.fr" +
+        "?subject=" + subject +
+        "&body=" + body;
+
+
+      confirmMsg.textContent =
+        "📮 Ton client mail s'ouvre " +
+        "avec ta proposition...";
+
+    }
+
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    function clearForm() {
+
+      nameInput.value = "";
+
+      ebcSlider.value = 20;
+
+      abvSlider.value = 5;
+
+      confirmMsg.textContent = "";
+
+      updatePreview();
+
+    }
+
+
+    /* =====================================================
+       EVENEMENTS
+       ===================================================== */
+
+    nameInput.addEventListener(
+      "input",
+      updatePreview
+    );
+
+
+    ebcSlider.addEventListener(
+      "input",
+      updatePreview
+    );
+
+
+    abvSlider.addEventListener(
+      "input",
+      updatePreview
+    );
+
+
+    document
+      .getElementById("copyBtn")
+      .addEventListener(
+        "click",
+        copyProposal
+      );
+
+
+    document
+      .getElementById("submitBtn")
+      .addEventListener(
+        "click",
+        submitProposal
+      );
+
+
+    document
+      .getElementById("clearBtn")
+      .addEventListener(
+        "click",
+        clearForm
+      );
+
+
+    /* =====================================================
+       INITIALISATION
+       ===================================================== */
+
+    updatePreview();
+
+  </script>
+
+
+</body>
+
+</html>
