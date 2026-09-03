@@ -806,6 +806,102 @@
     }
 
 
+    .confirm-msg.error {
+
+      color: #b4493c;
+    }
+
+
+    /* =========================
+       MUR DES PROPOSITIONS
+       ========================= */
+
+    .wall-list {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fill,
+          minmax(220px, 1fr)
+        );
+
+      gap: 12px;
+    }
+
+
+    .wall-card {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      border:
+        1px solid
+        #DCE8D8;
+
+      border-radius: 12px;
+
+      padding: 12px;
+
+      background: #f7f4ec;
+    }
+
+
+    .wall-swatch {
+
+      width: 34px;
+
+      height: 34px;
+
+      border-radius: 50%;
+
+      flex-shrink: 0;
+
+      border:
+        2px solid white;
+
+      box-shadow:
+        0 0 0 1px
+        #DCE8D8;
+    }
+
+
+    .wall-name {
+
+      font-weight: bold;
+
+      color: #2E6F40;
+
+      font-size: 0.92rem;
+
+      word-break: break-word;
+    }
+
+
+    .wall-meta {
+
+      color: #777;
+
+      font-size: 0.78rem;
+    }
+
+
+    .wall-empty,
+    .wall-loading {
+
+      color: #777;
+
+      text-align: center;
+
+      padding: 20px;
+
+      grid-column: 1 / -1;
+    }
+
+
     /* =========================
        FOOTER
        ========================= */
@@ -940,7 +1036,7 @@
       Houblonnière
     </a>
 
-    <a href="beer-lab.html">
+    <a href="beer-lab.html" class="active">
       Beer Lab
     </a>
 
@@ -1053,15 +1149,16 @@
 
           </div>
 
-
-         <!--   <p class="field-hint">
+          <!--
+          <p class="field-hint">
 
             De blonde très pâle (gauche)
             à noire type stout (droite).
 
           </p>
+          -->
 
-        </div> -->
+        </div>
 
 
         <!-- ABV -->
@@ -1113,13 +1210,15 @@
           </button>
 
 
-         <!--  <button
+          <!--
+          <button
             class="btn btn-light"
             id="copyBtn">
 
             📋 Copier
 
-          </button> -->
+          </button>
+          -->
 
 
           <button
@@ -1518,6 +1617,12 @@
       );
 
 
+    const wallList =
+      document.getElementById(
+        "wallList"
+      );
+
+
     function escapeHTML(value) {
 
       return String(value)
@@ -1639,6 +1744,44 @@ Taux d'alcool : ${abv} %
 Envoyé depuis le VERIHOP Beer Lab`
 
       );
+
+    }
+
+
+    /* =====================================================
+       COPIER (fonction gardée au cas où le bouton
+       "Copier" serait réactivé plus tard)
+       ===================================================== */
+
+    async function copyProposal() {
+
+      const text =
+        buildProposalText();
+
+
+      try {
+
+        await navigator
+          .clipboard
+          .writeText(text);
+
+
+        showConfirm(
+          "✅ Proposition copiée !",
+          false
+        );
+
+      }
+
+      catch (error) {
+
+        showConfirm(
+          "⚠️ Copie impossible, " +
+          "sélectionne le texte manuellement.",
+          true
+        );
+
+      }
 
     }
 
@@ -1927,12 +2070,20 @@ Envoyé depuis le VERIHOP Beer Lab`
     );
 
 
-    document
-      .getElementById("copyBtn")
-      .addEventListener(
+    const copyBtn =
+      document.getElementById(
+        "copyBtn"
+      );
+
+
+    if (copyBtn) {
+
+      copyBtn.addEventListener(
         "click",
         copyProposal
       );
+
+    }
 
 
     document
@@ -1956,6 +2107,8 @@ Envoyé depuis le VERIHOP Beer Lab`
        ===================================================== */
 
     updatePreview();
+
+    loadProposals();
 
   </script>
 
