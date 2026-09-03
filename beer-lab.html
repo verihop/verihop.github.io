@@ -1748,43 +1748,7 @@ Envoyé depuis le VERIHOP Beer Lab`
     }
 
 
-    /* =====================================================
-       COPIER (fonction gardée au cas où le bouton
-       "Copier" serait réactivé plus tard)
-       ===================================================== */
-
-    async function copyProposal() {
-
-      const text =
-        buildProposalText();
-
-
-      try {
-
-        await navigator
-          .clipboard
-          .writeText(text);
-
-
-        showConfirm(
-          "✅ Proposition copiée !",
-          false
-        );
-
-      }
-
-      catch (error) {
-
-        showConfirm(
-          "⚠️ Copie impossible, " +
-          "sélectionne le texte manuellement.",
-          true
-        );
-
-      }
-
-    }
-
+   
 
    /* =====================================================
        ENVOYER (SUPABASE)
