@@ -951,6 +951,7 @@
        ========================= */
     function buildProposalText() {
       const name = nameInput.value.trim() || "Sans nom";
+      const brewers = brewersInput ? brewersInput.value.trim() : "";
       const ebc = getEBC();
       const abv = Number(getABV()).toFixed(1).replace(".", ",");
       const aromas = getSelectedAromas();
@@ -988,6 +989,7 @@
        ========================= */
     async function submitProposal() {
       const name = nameInput.value.trim();
+      const brewers = brewersInput ? brewersInput.value.trim() : "";
 
       if (!name) {
         showConfirm("⚠️ Donne d'abord un nom à ta bière.", true);
@@ -1105,6 +1107,7 @@
        ========================= */
     function clearForm() {
       if (nameInput) nameInput.value = "";
+      if (brewersInput) brewersInput.value = "";
       if (otherIngredientInput) otherIngredientInput.value = "";
       if (ebcSlider) ebcSlider.value = "20";
       if (abvSlider) abvSlider.value = "5";
@@ -1124,6 +1127,7 @@
        EVENEMENTS
        ========================= */
     if (nameInput) nameInput.addEventListener("input", updatePreview);
+    if (brewersInput) brewersInput.addEventListener("input", updatePreview);
     if (otherIngredientInput) otherIngredientInput.addEventListener("input", updatePreview);
 
     if (ebcSlider) {
