@@ -554,6 +554,15 @@
           <input id="nameInput" type="text" maxlength="40" placeholder="Ex. Ecume tropical Vol.2">
         </div>
 
+        <div class="field">
+  <label class="field-label" for="brewersInput">Nom des brasseurs</label>
+  <input id="brewersInput" type="text" maxlength="100"
+         placeholder="">
+ <!-- <p class="field-hint">
+    Indique le ou les noms des personnes à l'origine de cette proposition.
+  </p> -->
+</div>
+
         <!-- PROFIL AROMATIQUE -->
         <div class="field">
           <label class="field-label">Profil aromatique</label>
@@ -777,6 +786,7 @@
        ELEMENTS
        ========================= */
     const nameInput = document.getElementById("nameInput");
+    const brewersInput = document.getElementById("brewersInput");
     const otherIngredientInput = document.getElementById("otherIngredientInput");
     const ebcSlider = document.getElementById("ebcSlider");
     const abvSlider = document.getElementById("abvSlider");
@@ -954,6 +964,7 @@
         `Taux d'alcool : ${abv} %\n` +
         `Profil aromatique : ${aromas.join(", ")}\n` +
         `Autre ingrédient : ${otherIngredient || "Aucun"}\n\n` +
+        `Brasseur(s) : ${brewers || "Non renseigné"}\n\n`+
         `Envoyé depuis le VERIHOP Beer Lab`
       );
     }
@@ -1012,7 +1023,8 @@
             ebc: ebc,
             abv: abv,
             aromas: aromas,
-            other_ingredient: otherIngredient || null
+            other_ingredient: otherIngredient || null,
+            brewers: brewers || null
           }]);
 
         if (error) {
