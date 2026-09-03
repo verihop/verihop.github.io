@@ -686,6 +686,11 @@
         
           </div>
 
+           <div class="aroma-counter">
+            <span><strong id="aromaCount">0</strong> / 3 sélectionné(s)</span>
+            <span id="aromaError" class="aroma-error"></span>
+          </div>
+
           <!-- NIVEAU DE HOUBLON -->
           <div class="field">
             <label class="field-label">Niveau de houblon</label>
@@ -1029,7 +1034,7 @@
       if (hopLevelHint) hopLevelHint.textContent = labels[level];
 
       if (hopPreview) {
-        hopPreview.textContent = level ? "🌿".repeat(level) : "";
+        hopPreview.textContent = level ? '<img src="images/houblon.png" class="hop-icon" alt="">'.repeat(level) : "";
       }
 
       hopLevelButtons.forEach(button => {
@@ -1168,9 +1173,9 @@
             ebc: ebc,
             abv: abv,
             aromas: aromas,
-            hop_level: hopLevel || null,
             other_ingredient: otherIngredient || null,
-            brewers: brewers || null
+            brewers: brewers || null,
+            hop_level: hopLevel || null
           }]);
 
         if (error) {
@@ -1204,7 +1209,7 @@
       try {
         const { data, error } = await supabaseClient
           .from(TABLE_NAME)
-          .select("name, ebc, abv, aromas, hop_level, other_ingredient, brewers, created_at")
+          .select("name, ebc, abv, aromas, other_ingredient, brewers, hop_level, created_at")
           .order("created_at", { ascending: false })
           .limit(24);
 
