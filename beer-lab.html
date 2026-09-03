@@ -21,7 +21,7 @@
   </script>
 
 
-    <!-- =========================
+  <!-- =========================
        SUPABASE
        ========================= -->
 
@@ -33,15 +33,13 @@
         content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="VERIHOP Beer Lab : propose ta bière imaginaire — un nom, une couleur (EBC) et un taux d'alcool.">
+        content="VERIHOP Beer Lab : propose ta bière imaginaire — un nom, une couleur (EBC), un taux d'alcool, un profil aromatique et un ingrédient.">
 
   <meta name="keywords"
         content="VERIHOP, Beer Lab, bière artisanale, proposer bière, EBC, ABV">
 
   <meta name="author"
         content="VERIHOP">
-
-
 
   <title>VERIHOP | Beer Lab 🧪</title>
 
@@ -61,18 +59,13 @@
     }
 
     body {
-
       margin: 0;
-
       font-family:
         Arial,
         Helvetica,
         sans-serif;
-
       background: #f7f4ec;
-
       color: #204020;
-
       line-height: 1.6;
     }
 
@@ -82,28 +75,20 @@
        ========================= */
 
     header {
-
       background:
         linear-gradient(
           135deg,
           #4F8A54,
           #2E6F40
         );
-
       padding: 25px 20px;
-
       text-align: center;
     }
 
-
     .logo {
-
       max-width: 220px;
-
       width: 80%;
-
       height: auto;
-
       border-radius: 10px;
     }
 
@@ -113,48 +98,29 @@
        ========================= */
 
     nav {
-
       background: #2E6F40;
-
       display: flex;
-
       justify-content: center;
-
       flex-wrap: wrap;
-
       gap: 10px;
-
       padding: 12px;
-
       position: sticky;
-
       top: 0;
-
       z-index: 100;
     }
 
-
     nav a {
-
       color: #c7962a;
-
       text-decoration: none;
-
       font-weight: bold;
-
       padding: 8px 14px;
-
       border-radius: 8px;
-
       transition: 0.2s;
     }
 
-
     nav a:hover,
     nav a.active {
-
       background: rgba(255,255,255,0.12);
-
       color: white;
     }
 
@@ -164,40 +130,29 @@
        ========================= */
 
     section {
-
       max-width: 1150px;
-
       margin: 0 auto;
-
       padding: 45px 20px;
     }
 
-
     h1,
     h2 {
-
       text-align: center;
-
       color: #0b4d2a;
     }
 
-
     h1 {
-
       font-size:
         clamp(
           2rem,
           5vw,
           3rem
         );
-
       margin:
         0 0 10px;
     }
 
-
     h2 {
-
       margin-bottom: 25px;
     }
 
@@ -207,43 +162,26 @@
        ========================= */
 
     .lab-hero {
-
       padding-top: 55px;
-
       padding-bottom: 35px;
     }
 
-
     .lab-badge {
-
       display: inline-block;
-
       background: #c7962a;
-
       color: white;
-
       font-weight: bold;
-
       padding: 6px 14px;
-
       border-radius: 30px;
-
       margin-bottom: 12px;
     }
 
-
     .hero-subtitle {
-
       text-align: center;
-
       color: #666;
-
       margin-top: 0;
-
       max-width: 600px;
-
       margin-left: auto;
-
       margin-right: auto;
     }
 
@@ -253,43 +191,29 @@
        ========================= */
 
     .lab-grid {
-
       display: grid;
-
       grid-template-columns:
         minmax(0, 1fr)
         minmax(300px, 0.85fr);
-
       gap: 25px;
-
       align-items: start;
     }
 
-
     .panel {
-
       background: white;
-
       border:
         1px solid
         #DCE8D8;
-
       border-radius: 18px;
-
       box-shadow:
         0 8px 18px
         rgba(0,0,0,0.10);
-
       padding: 28px;
     }
 
-
     .panel h2 {
-
       text-align: left;
-
       margin-top: 0;
-
       margin-bottom: 22px;
     }
 
@@ -299,61 +223,38 @@
        ========================= */
 
     .field {
-
       margin-bottom: 26px;
     }
 
-
     label.field-label {
-
       display: block;
-
       font-weight: bold;
-
       color: #204020;
-
       margin-bottom: 8px;
     }
 
-
     .field-hint {
-
       color: #777;
-
       font-size: 0.82rem;
-
       margin: 4px 0 0;
     }
 
-
     input[type="text"] {
-
       width: 100%;
-
       border:
         1px solid
         #cfdcc9;
-
       border-radius: 10px;
-
       padding: 12px 14px;
-
       background: white;
-
       color: #204020;
-
       font-size: 1.05rem;
-
       outline: none;
-
       transition: 0.2s;
     }
 
-
     input[type="text"]:focus {
-
       border-color: #4F8A54;
-
       box-shadow:
         0 0 0 3px
         rgba(79,138,84,0.12);
@@ -361,41 +262,46 @@
 
 
     /* =========================
-       CURSEUR EBC
+       AUTRE INGREDIENT
        ========================= */
 
-    .slider-row {
+    .other-ingredient-group {
+      margin-top: 12px;
+    }
 
-      display: flex;
-
-      align-items: center;
-
-      gap: 14px;
+    .other-ingredient-group input {
+      width: 100%;
     }
 
 
+    /* =========================
+       CURSEURS
+       ========================= */
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
     input[type="range"] {
-
       -webkit-appearance: none;
-
       appearance: none;
-
       flex: 1;
-
       height: 16px;
-
       border-radius: 10px;
-
       outline: none;
-
       border:
         1px solid
         rgba(0,0,0,0.12);
     }
 
 
-    #ebcSlider {
+    /* =========================
+       CURSEUR EBC
+       ========================= */
 
+    #ebcSlider {
       background: linear-gradient(
         to right,
         #ffe699 0%,
@@ -419,8 +325,11 @@
     }
 
 
-    #abvSlider {
+    /* =========================
+       CURSEUR ABV
+       ========================= */
 
+    #abvSlider {
       background: linear-gradient(
         to right,
         #eef4eb 0%,
@@ -432,71 +341,45 @@
 
 
     input[type="range"]::-webkit-slider-thumb {
-
       -webkit-appearance: none;
-
       appearance: none;
-
       width: 26px;
-
       height: 26px;
-
       border-radius: 50%;
-
       background: white;
-
       border: 3px solid #2E6F40;
-
       box-shadow:
         0 2px 6px
         rgba(0,0,0,0.25);
-
       cursor: pointer;
-
       margin-top: -1px;
     }
 
-
     input[type="range"]::-moz-range-thumb {
-
       width: 26px;
-
       height: 26px;
-
       border-radius: 50%;
-
       background: white;
-
       border: 3px solid #2E6F40;
-
       box-shadow:
         0 2px 6px
         rgba(0,0,0,0.25);
-
       cursor: pointer;
     }
 
-
     .slider-value {
-
       min-width: 70px;
-
       text-align: center;
-
       font-weight: bold;
-
       color: #2E6F40;
-
       background: #eef4eb;
-
       border-radius: 10px;
-
       padding: 8px 6px;
-
       font-size: 0.95rem;
     }
 
-      /* =========================
+
+    /* =========================
        PROFIL AROMATIQUE
        ========================= */
 
@@ -603,79 +486,52 @@
     }
 
 
-
     /* =========================
        BOUTONS
        ========================= */
 
     .button-row {
-
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 10px;
-
       margin-top: 8px;
     }
 
-
     .btn {
-
       border: 0;
-
       border-radius: 10px;
-
       padding: 12px 18px;
-
       cursor: pointer;
-
       font-weight: bold;
-
       font-size: 0.95rem;
-
       transition:
         transform 0.15s ease,
         box-shadow 0.15s ease;
     }
 
-
     .btn:hover {
-
       transform: translateY(-2px);
-
       box-shadow:
         0 5px 12px
         rgba(0,0,0,0.12);
     }
 
-
     .btn-primary {
-
       background: #2E6F40;
-
       color: white;
     }
 
-
     .btn-primary:hover {
-
       background: #0b4d2a;
     }
 
-
     .btn-gold {
-
       background: #c7962a;
-
       color: white;
     }
 
-
     .btn-light {
-
       background: #eef4eb;
-
       color: #2E6F40;
     }
 
@@ -685,44 +541,30 @@
        ========================= */
 
     .result-card {
-
       position: sticky;
-
       top: 80px;
-
       overflow: hidden;
-
       text-align: center;
     }
 
-
     .recipe-name {
-
       font-size: 1.6rem;
-
       color: #2E6F40;
-
       font-weight: bold;
-
       margin:
         5px 0 4px;
-
       min-height: 1.4em;
-
       word-break: break-word;
     }
 
-
     .recipe-placeholder {
-
       color: #aaa;
-
       font-style: italic;
     }
 
 
     /* =========================
-       BOUTEILLE / ETIQUETTE PREMIUM
+       BOUTEILLE / ETIQUETTE
        ========================= */
 
     .bottle-area {
@@ -785,80 +627,119 @@
       box-shadow: 0 2px 3px rgba(0,0,0,.25);
     }
 
-    /* =====================================================
-       ETIQUETTE DE LA BOUTEILLE
-       Le logo est une vraie image : remplace simplement
-       le chemin ci-dessous dans le HTML.
-       ===================================================== */
-
     .bottle-label {
       position: absolute;
       z-index: 3;
-      top: 70px;
-      left: 7px;
-      width: 128px;
-      height: 154px;
-      box-sizing: border-box;
-      padding: 18px 10px 12px;
+      top: 63px;
+      left: 8px;
+      width: 126px;
+      height: 178px;
+      padding: 10px 9px 9px;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       text-align: center;
-      background: rgba(250, 247, 237, .97);
-      border: 1px solid rgba(190, 153, 76, .65);
-      border-radius: 2px;
-      box-shadow: 0 3px 7px rgba(0,0,0,.16);
+      color: #174c36;
+      background:
+        radial-gradient(circle at 50% 22%, rgba(255,255,255,.95), transparent 28%),
+        #f7f1df;
+      border: 1px solid #d0b27a;
+      box-shadow: 0 2px 5px rgba(0,0,0,.18);
+      transition: background .3s ease, color .3s ease;
     }
 
     .bottle-label::before {
       content: "";
       position: absolute;
       inset: 5px;
-      border: 1px solid rgba(23,76,54,.20);
+      border: 1px solid rgba(23,76,54,.35);
       pointer-events: none;
     }
 
-    .label-logo {
+    .label-brand {
       position: relative;
       z-index: 2;
       display: block;
-      width: 82px;
-      max-width: 100%;
-      max-height: 70px;
-      height: auto;
-      object-fit: contain;
-      margin: 2px auto 12px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .label-hop {
+      color: #b88a2d;
+      font-size: 13px;
+      margin-left: 1px;
+    }
+
+    .label-landscape {
+      position: relative;
+      z-index: 2;
+      width: 88px;
+      height: 43px;
+      margin: 3px auto 6px;
+      overflow: hidden;
+      border: 1.5px solid #174c36;
+      border-radius: 50% 50% 4px 4px;
+      background: linear-gradient(#f7f1df 0 47%, #3b9b91 48% 100%);
+    }
+
+    .label-landscape::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      bottom: 7px;
+      width: 49px;
+      height: 34px;
+      background: #477c39;
+      clip-path: polygon(0 100%, 39% 27%, 54% 49%, 73% 0, 100% 100%);
+    }
+
+    .label-landscape::after {
+      content: "";
+      position: absolute;
+      right: -5px;
+      bottom: 6px;
+      width: 65px;
+      height: 23px;
+      border-top: 3px solid #f7f1df;
+      border-radius: 50%;
+      transform: rotate(-8deg);
     }
 
     .label-name {
       position: relative;
       z-index: 2;
-      width: 100%;
-      min-height: 42px;
+      min-height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 3px;
-      box-sizing: border-box;
-      color: #174c36;
+      padding: 0 2px;
+      color: #b37e20;
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 17px;
+      font-size: 18px;
       font-style: italic;
       font-weight: 700;
-      line-height: 1.05;
+      line-height: 1.02;
       overflow-wrap: anywhere;
-      word-break: break-word;
+    }
+
+    .label-style {
+      position: relative;
+      z-index: 2;
+      margin-top: 2px;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #174c36;
     }
 
     .label-divider {
       position: relative;
       z-index: 2;
-      width: 58px;
+      width: 76px;
       height: 1px;
-      flex: 0 0 auto;
-      margin: 8px auto 7px;
+      margin: 6px auto 5px;
       background: #b88a2d;
     }
 
@@ -867,76 +748,49 @@
       z-index: 2;
       display: flex;
       justify-content: center;
-      gap: 6px;
-      font-size: 6.5px;
+      gap: 7px;
+      font-size: 7px;
       font-weight: 800;
       line-height: 1;
       color: #174c36;
-      white-space: nowrap;
     }
 
     .label-placeholder {
       color: #b88a2d;
     }
 
-    /* Anciennes classes conservées pour compatibilité JS, mais
-       elles ne sont plus utilisées dans l'étiquette. */
-    .label-brand,
-    .label-hop,
-    .label-landscape,
-    .label-style {
-      display: none;
-    }
 
     /* =========================
        METRIQUES
        ========================= */
 
     .metrics {
-
       display: grid;
-
       grid-template-columns:
         repeat(2, 1fr);
-
       gap: 10px;
-
       margin-bottom: 18px;
     }
 
-
     .metric {
-
       background: #f7f4ec;
-
       border:
         1px solid
         #DCE8D8;
-
       border-radius: 12px;
-
       padding: 13px;
-
       text-align: center;
     }
 
-
     .metric-value {
-
       display: block;
-
       color: #2E6F40;
-
       font-size: 1.35rem;
-
       font-weight: bold;
     }
 
-
     .metric-label {
-
       color: #777;
-
       font-size: 0.78rem;
     }
 
@@ -946,33 +800,21 @@
        ========================= */
 
     .notice {
-
       margin-top: 15px;
-
       color: #777;
-
       font-size: 0.75rem;
-
       text-align: center;
     }
 
-
     .confirm-msg {
-
       margin-top: 12px;
-
       color: #23713a;
-
       font-weight: bold;
-
       font-size: 0.9rem;
-
       min-height: 1.2em;
     }
 
-
     .confirm-msg.error {
-
       color: #b4493c;
     }
 
@@ -982,87 +824,63 @@
        ========================= */
 
     .wall-list {
-
       display: grid;
-
       grid-template-columns:
         repeat(
           auto-fill,
           minmax(220px, 1fr)
         );
-
       gap: 12px;
     }
 
-
     .wall-card {
-
       display: flex;
-
       align-items: center;
-
       gap: 12px;
-
       border:
         1px solid
         #DCE8D8;
-
       border-radius: 12px;
-
       padding: 12px;
-
       background: #f7f4ec;
     }
 
-
     .wall-swatch {
-
       width: 34px;
-
       height: 34px;
-
       border-radius: 50%;
-
       flex-shrink: 0;
-
       border:
         2px solid white;
-
       box-shadow:
         0 0 0 1px
         #DCE8D8;
     }
 
-
     .wall-name {
-
       font-weight: bold;
-
       color: #2E6F40;
-
       font-size: 0.92rem;
-
       word-break: break-word;
     }
 
-
     .wall-meta {
-
       color: #777;
-
       font-size: 0.78rem;
     }
 
+    .wall-ingredient {
+      color: #8a6820;
+      font-size: 0.75rem;
+      margin-top: 4px;
+      font-style: italic;
+    }
 
     .wall-empty,
     .wall-loading {
-
       color: #777;
-
       text-align: center;
-
       padding: 20px;
-
       grid-column: 1 / -1;
     }
 
@@ -1072,25 +890,16 @@
        ========================= */
 
     footer {
-
       background: #0b4d2a;
-
       color: white;
-
       text-align: center;
-
       padding: 25px 15px;
-
       margin-top: 30px;
     }
 
-
     footer a {
-
       color: #c7962a;
-
       text-decoration: none;
-
       font-weight: bold;
     }
 
@@ -1102,13 +911,10 @@
     @media (max-width: 850px) {
 
       .lab-grid {
-
         grid-template-columns: 1fr;
       }
 
-
       .result-card {
-
         position: static;
       }
 
@@ -1118,28 +924,24 @@
     @media (max-width: 600px) {
 
       nav a {
-
         font-size: 0.9rem;
-
         padding: 7px 9px;
       }
 
-
       section {
-
         padding:
           35px 15px;
       }
 
-
       .panel {
-
         padding: 18px;
       }
 
+      .aroma-grid {
+        grid-template-columns: 1fr;
+      }
 
       .button-row .btn {
-
         width: 100%;
       }
 
@@ -1190,7 +992,7 @@
   <nav>
 
     <a href="index.html">
-     Bières
+      Bières
     </a>
 
     <a href="presentation.html">
@@ -1222,17 +1024,15 @@
 
     </div>
 
-
     <h1>
       Propose ta bière à l'équipe de Verihop
     </h1>
 
-
     <p class="hero-subtitle">
 
-      Donne-lui un nom, choisis sa couleur
-      et son taux d'alcool. On regarde
-      toutes les propositions
+      Donne-lui un nom, choisis sa couleur,
+      son taux d'alcool et son profil aromatique.
+      On regarde toutes les propositions.
 
     </p>
 
@@ -1271,7 +1071,6 @@
 
           </label>
 
-
           <input
             id="nameInput"
             type="text"
@@ -1280,8 +1079,11 @@
 
         </div>
 
-         <!-- PROFIL AROMATIQUE -->
+
+        <!-- PROFIL AROMATIQUE -->
+
         <div class="field">
+
           <label class="field-label">
             Profil aromatique
           </label>
@@ -1291,168 +1093,246 @@
           </p>
 
           <div class="aroma-grid" id="aromaGrid">
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma0" name="aroma" value="Fruité">
               <label for="aroma0">🍑 Fruité</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma1" name="aroma" value="Agrumes">
               <label for="aroma1">🍊 Agrumes</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma2" name="aroma" value="Fruits tropicaux">
               <label for="aroma2">🥭 Fruits tropicaux</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma3" name="aroma" value="Fruits rouges">
               <label for="aroma3">🍓 Fruits rouges</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma4" name="aroma" value="Fruits à noyau">
               <label for="aroma4">🍑 Fruits à noyau</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma5" name="aroma" value="Fruits blancs">
               <label for="aroma5">🍐 Fruits blancs</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma6" name="aroma" value="Pomme / Poire">
               <label for="aroma6">🍏 Pomme / Poire</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma7" name="aroma" value="Raisin / Vin">
               <label for="aroma7">🍇 Raisin / Vin</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma8" name="aroma" value="Floral">
               <label for="aroma8">🌸 Floral</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma9" name="aroma" value="Herbacé">
               <label for="aroma9">🌿 Herbacé</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma10" name="aroma" value="Thé / Végétal">
               <label for="aroma10">🍃 Thé / Végétal</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma11" name="aroma" value="Houblonné">
               <label for="aroma11">🌱 Houblonné</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma12" name="aroma" value="Résineux / Pin">
               <label for="aroma12">🌲 Résineux / Pin</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma13" name="aroma" value="Résine / Cannabis">
               <label for="aroma13">🌲 Résine / Cannabis</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma14" name="aroma" value="Épicé">
               <label for="aroma14">🌶️ Épicé</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma15" name="aroma" value="Épices douces">
               <label for="aroma15">✨ Épices douces</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma16" name="aroma" value="Poivré">
               <label for="aroma16">🫚 Poivré</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma17" name="aroma" value="Clou de girofle / Phénolique">
               <label for="aroma17">🌿 Clou de girofle / Phénolique</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma18" name="aroma" value="Levure / Fermentaire">
               <label for="aroma18">🧫 Levure / Fermentaire</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma19" name="aroma" value="Funky / Fermentation">
               <label for="aroma19">🧪 Funky / Fermentation</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma20" name="aroma" value="Biscuit / Céréales">
               <label for="aroma20">🍪 Biscuit / Céréales</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma21" name="aroma" value="Pain / Malt">
               <label for="aroma21">🥖 Pain / Malt</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma22" name="aroma" value="Toasté / Grillé">
               <label for="aroma22">🍞 Toasté / Grillé</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma23" name="aroma" value="Caramel">
               <label for="aroma23">🍮 Caramel</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma24" name="aroma" value="Toffee / Caramel">
               <label for="aroma24">🍬 Toffee / Caramel</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma25" name="aroma" value="Miel">
               <label for="aroma25">🍯 Miel</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma26" name="aroma" value="Noisette / Fruits secs">
               <label for="aroma26">🌰 Noisette / Fruits secs</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma27" name="aroma" value="Vanillé">
               <label for="aroma27">🍦 Vanillé</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma28" name="aroma" value="Noix de coco">
               <label for="aroma28">🥥 Noix de coco</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma29" name="aroma" value="Chocolat">
               <label for="aroma29">🍫 Chocolat</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma30" name="aroma" value="Café">
               <label for="aroma30">☕ Café</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma31" name="aroma" value="Torréfié">
               <label for="aroma31">🔥 Torréfié</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma32" name="aroma" value="Fumé">
               <label for="aroma32">💨 Fumé</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma33" name="aroma" value="Boisé">
               <label for="aroma33">🪵 Boisé</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma34" name="aroma" value="Terreux">
               <label for="aroma34">🌱 Terreux</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma35" name="aroma" value="Minéral">
               <label for="aroma35">🪨 Minéral</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma36" name="aroma" value="Acidulé / Agrume">
               <label for="aroma36">🍋 Acidulé / Agrume</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma37" name="aroma" value="Acidulé / Lactique">
               <label for="aroma37">🥛 Acidulé / Lactique</label>
             </div>
+
             <div class="aroma-option">
               <input type="checkbox" id="aroma38" name="aroma" value="Alcool / Chaleureux">
               <label for="aroma38">🥃 Alcool / Chaleureux</label>
             </div>
+
           </div>
 
           <div class="aroma-counter">
-            <span><strong id="aromaCount">0</strong> / 3 sélectionné(s)</span>
-            <span id="aromaError" class="aroma-error"></span>
+
+            <span>
+              <strong id="aromaCount">0</strong>
+              / 3 sélectionné(s)
+            </span>
+
+            <span
+              id="aromaError"
+              class="aroma-error">
+            </span>
+
           </div>
+
+        </div>
+
+
+        <!-- AUTRE INGREDIENT -->
+
+        <div class="field other-ingredient-group">
+
+          <label
+            class="field-label"
+            for="otherIngredientInput">
+
+            Autre ingrédient
+
+          </label>
+
+          <input
+            id="otherIngredientInput"
+            type="text"
+            maxlength="100"
+            placeholder="Ex. sirop d'érable, chocolat, fruit, épices...">
+
+          <p class="field-hint">
+
+            Facultatif — indique un ingrédient particulier
+            que tu souhaites ajouter à ta bière.
+
+          </p>
+
         </div>
 
 
@@ -1467,7 +1347,6 @@
             Couleur (EBC)
 
           </label>
-
 
           <div class="slider-row">
 
@@ -1489,15 +1368,6 @@
 
           </div>
 
-          <!--
-          <p class="field-hint">
-
-            De blonde très pâle (gauche)
-            à noire type stout (droite).
-
-          </p>
-          -->
-
         </div>
 
 
@@ -1512,7 +1382,6 @@
             Taux d'alcool (ABV)
 
           </label>
-
 
           <div class="slider-row">
 
@@ -1549,18 +1418,6 @@
 
           </button>
 
-
-          <!--
-          <button
-            class="btn btn-light"
-            id="copyBtn">
-
-            📋 Copier
-
-          </button>
-          -->
-
-
           <button
             class="btn btn-light"
             id="clearBtn">
@@ -1591,7 +1448,6 @@
           Aperçu
         </h2>
 
-
         <div
           class="recipe-name"
           id="recipeName">
@@ -1602,8 +1458,11 @@
 
         </div>
 
-
-        <div class="bottle-area">
+        <div
+          class="selected-aromas"
+          id="selectedAromas">
+        </div>
+<div class="bottle-area">
 
           <div
             class="bottle"
@@ -1613,7 +1472,11 @@
               class="bottle-label"
               id="bottleLabel">
 
-
+              <!-- ==================================================
+                   LOGO VERIHOP
+                   Remplace uniquement le chemin ci-dessous.
+                   Exemple : images/verihop-logo.png
+                   ================================================== -->
               <img
                 class="label-logo"
                 src="images/veriboc_logo.jpg"
@@ -1681,7 +1544,7 @@
         <p class="notice">
 
           📮 En cliquant sur "Envoyer",
-          ta proposition à l'équipe VERIHOP.
+          ta proposition est transmise à l'équipe VERIHOP.
 
         </p>
 
@@ -1690,7 +1553,9 @@
     </div>
 
   </section>
-<!-- =========================
+
+
+  <!-- =========================
        MUR DES PROPOSITIONS
        ========================= -->
 
@@ -1702,15 +1567,12 @@
         📌 Propositions récentes
       </h2>
 
-
       <div
         class="wall-list"
         id="wallList">
 
         <p class="wall-loading">
-
           Chargement...
-
         </p>
 
       </div>
@@ -1773,7 +1635,6 @@
       const value =
         hex.replace("#", "");
 
-
       return [
 
         parseInt(
@@ -1804,7 +1665,6 @@
             .toString(16)
             .padStart(2, "0");
 
-
       return (
         "#" +
         toHex(r) +
@@ -1823,7 +1683,6 @@
         EBC_STOPS[
           EBC_STOPS.length - 1
         ];
-
 
       for (
         let i = 0;
@@ -1846,18 +1705,14 @@
 
       }
 
-
       const [r1, g1, b1] =
         hexToRgb(lower[1]);
-
 
       const [r2, g2, b2] =
         hexToRgb(upper[1]);
 
-
       const range =
         upper[0] - lower[0] || 1;
-
 
       const ratio =
         Math.min(
@@ -1867,7 +1722,6 @@
           ),
           1
         );
-
 
       return rgbToHex(
 
@@ -1881,231 +1735,453 @@
 
     }
 
-       /* =====================================================
+
+    /* =====================================================
        CONFIGURATION
        ===================================================== */
 
-    const SUPABASE_URL = "https://kezdmoybnuswjtdvpmqv.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_ctMhvefmZVySxT43Pyb3xQ_tPFqXr9v";
-    const TABLE_NAME = "beer_proposals";
+    const SUPABASE_URL =
+      "https://kezdmoybnuswjtdvpmqv.supabase.co";
 
-  /* =====================================================
+    const SUPABASE_ANON_KEY =
+      "sb_publishable_ctMhvefmZVySxT43Pyb3xQ_tPFqXr9v";
+
+    const TABLE_NAME =
+      "beer_proposals";
+
+
+    /* =====================================================
        ELEMENTS
        ===================================================== */
 
-    const nameInput = document.getElementById("nameInput");
-    const ebcSlider = document.getElementById("ebcSlider");
-    const abvSlider = document.getElementById("abvSlider");
-    const ebcValue = document.getElementById("ebcValue");
-    const abvValue = document.getElementById("abvValue");
-    const ebcMetric = document.getElementById("ebcMetric");
-    const abvMetric = document.getElementById("abvMetric");
-    const recipeName = document.getElementById("recipeName");
-    const bottle = document.getElementById("bottle");
-    const bottleLabel = document.getElementById("bottleLabel");
-    const labelName = document.getElementById("labelName");
-    const labelStyle = document.getElementById("labelStyle");
-    const labelAbv = document.getElementById("labelAbv");
-    const labelEbc = document.getElementById("labelEbc");
-    const confirmMsg = document.getElementById("confirmMsg");
-    const wallList = document.getElementById("wallList");
-    const submitBtn = document.getElementById("submitBtn");
-    const clearBtn = document.getElementById("clearBtn");
-    const copyBtn = document.getElementById("copyBtn");
+    const nameInput =
+      document.getElementById("nameInput");
 
-    const aromaCheckboxes = Array.from(
-      document.querySelectorAll('input[name="aroma"]')
-    );
-    const aromaCount = document.getElementById("aromaCount");
-    const aromaError = document.getElementById("aromaError");
-    const selectedAromas = document.getElementById("selectedAromas");
+    const otherIngredientInput =
+      document.getElementById("otherIngredientInput");
 
-    /* =====================================================
-       SECURITE : VERIFICATION DES ELEMENTS
-       ===================================================== */
+    const ebcSlider =
+      document.getElementById("ebcSlider");
 
-    if (!ebcSlider || !abvSlider) {
-      console.error("Beer Lab : sliders EBC/ABV introuvables dans le HTML.");
-    }
+    const abvSlider =
+      document.getElementById("abvSlider");
+
+    const ebcValue =
+      document.getElementById("ebcValue");
+
+    const abvValue =
+      document.getElementById("abvValue");
+
+    const ebcMetric =
+      document.getElementById("ebcMetric");
+
+    const abvMetric =
+      document.getElementById("abvMetric");
+
+    const recipeName =
+      document.getElementById("recipeName");
+
+    const bottle =
+      document.getElementById("bottle");
+
+    const labelName =
+      document.getElementById("labelName");
+
+    const labelStyle =
+      document.getElementById("labelStyle");
+
+    const labelAbv =
+      document.getElementById("labelAbv");
+
+    const labelEbc =
+      document.getElementById("labelEbc");
+
+    const confirmMsg =
+      document.getElementById("confirmMsg");
+
+    const wallList =
+      document.getElementById("wallList");
+
+    const submitBtn =
+      document.getElementById("submitBtn");
+
+    const clearBtn =
+      document.getElementById("clearBtn");
+
+    const aromaCheckboxes =
+      Array.from(
+        document.querySelectorAll(
+          'input[name="aroma"]'
+        )
+      );
+
+    const aromaCount =
+      document.getElementById("aromaCount");
+
+    const aromaError =
+      document.getElementById("aromaError");
+
+    const selectedAromas =
+      document.getElementById("selectedAromas");
+
 
     /* =====================================================
        SUPABASE
-       IMPORTANT : l'aperçu et les curseurs fonctionnent
-       même si Supabase n'est pas disponible.
        ===================================================== */
 
     let supabaseClient = null;
 
     try {
+
       if (
         window.supabase &&
         typeof window.supabase.createClient === "function"
       ) {
-        supabaseClient = window.supabase.createClient(
-          SUPABASE_URL,
-          SUPABASE_ANON_KEY
-        );
+
+        supabaseClient =
+          window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+          );
+
       } else {
-        console.warn("Supabase JS n'est pas chargé.");
+
+        console.warn(
+          "Supabase JS n'est pas chargé."
+        );
+
       }
+
     } catch (error) {
-      console.error("Erreur d'initialisation Supabase :", error);
+
+      console.error(
+        "Erreur d'initialisation Supabase :",
+        error
+      );
+
     }
+
 
     /* =====================================================
        OUTILS
        ===================================================== */
 
     function escapeHTML(value) {
+
       return String(value)
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
+
     }
+
 
     function getEBC() {
-      return Number(ebcSlider.value);
+
+      return Number(
+        ebcSlider.value
+      );
+
     }
+
 
     function getABV() {
-      return Number(abvSlider.value);
+
+      return Number(
+        abvSlider.value
+      );
+
     }
 
+
     function formatABV(value) {
-      return Number(value).toFixed(1).replace(".", ",") + " %";
+
+      return (
+        Number(value)
+          .toFixed(1)
+          .replace(".", ",") +
+        " %"
+      );
+
     }
-      /* =====================================================
+
+
+    /* =====================================================
        PROFILS AROMATIQUES
        ===================================================== */
 
     function getSelectedAromas() {
+
       return aromaCheckboxes
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
+        .filter(
+          checkbox =>
+            checkbox.checked
+        )
+        .map(
+          checkbox =>
+            checkbox.value
+        );
+
     }
+
 
     function updateAromaPreview() {
-      const aromas = getSelectedAromas();
 
-      if (aromaCount) aromaCount.textContent = aromas.length;
+      const aromas =
+        getSelectedAromas();
+
+      if (aromaCount) {
+
+        aromaCount.textContent =
+          aromas.length;
+
+      }
 
       if (selectedAromas) {
-        selectedAromas.innerHTML = aromas
-          .map(aroma =>
-            `<span class="aroma-tag">${escapeHTML(aroma)}</span>`
-          )
-          .join("");
+
+        selectedAromas.innerHTML =
+          aromas
+            .map(
+              aroma =>
+                `<span class="aroma-tag">${escapeHTML(aroma)}</span>`
+            )
+            .join("");
+
       }
+
     }
 
-    function validateAromas(showError = true) {
-      const count = getSelectedAromas().length;
 
-      if (count < 1 || count > 3) {
-        if (showError && aromaError) {
+    function validateAromas(
+      showError = true
+    ) {
+
+      const count =
+        getSelectedAromas().length;
+
+      if (
+        count < 1 ||
+        count > 3
+      ) {
+
+        if (
+          showError &&
+          aromaError
+        ) {
+
           aromaError.textContent =
             count < 1
               ? "Choisis au moins 1 profil."
               : "Maximum 3 profils.";
+
         }
+
         return false;
+
       }
 
-      if (aromaError) aromaError.textContent = "";
+      if (aromaError) {
+
+        aromaError.textContent = "";
+
+      }
+
       return true;
+
     }
 
-    function handleAromaChange(event) {
-      const checked = aromaCheckboxes.filter(
-        checkbox => checkbox.checked
-      );
+
+    function handleAromaChange(
+      event
+    ) {
+
+      const checked =
+        aromaCheckboxes.filter(
+          checkbox =>
+            checkbox.checked
+        );
 
       if (checked.length > 3) {
+
         event.target.checked = false;
 
         if (aromaError) {
-          aromaError.textContent = "Maximum 3 profils.";
+
+          aromaError.textContent =
+            "Maximum 3 profils.";
+
           setTimeout(() => {
-            if (aromaError) aromaError.textContent = "";
+
+            if (aromaError) {
+
+              aromaError.textContent = "";
+
+            }
+
           }, 2500);
+
         }
+
       }
 
       updateAromaPreview();
+
     }
 
 
-
-   /* =====================================================
+    /* =====================================================
        APERCU
        ===================================================== */
 
     function updatePreview() {
-      if (!ebcSlider || !abvSlider) return;
 
-      const name = nameInput ? nameInput.value.trim() : "";
-      const ebc = getEBC();
-      const abv = getABV();
-      const abvText = formatABV(abv);
+      if (
+        !ebcSlider ||
+        !abvSlider
+      ) return;
 
-      // Valeurs affichées à côté des curseurs
+      const name =
+        nameInput
+          ? nameInput.value.trim()
+          : "";
+
+      const ebc =
+        getEBC();
+
+      const abv =
+        getABV();
+
+      const abvText =
+        formatABV(abv);
+
+
       if (ebcValue) {
-        ebcValue.textContent = `${ebc} EBC`;
+
+        ebcValue.textContent =
+          `${ebc} EBC`;
+
       }
+
 
       if (abvValue) {
-        abvValue.textContent = abvText;
+
+        abvValue.textContent =
+          abvText;
+
       }
 
-      // Valeurs affichées dans l'aperçu de la bouteille
+
       if (ebcMetric) {
-        ebcMetric.textContent = ebc;
+
+        ebcMetric.textContent =
+          ebc;
+
       }
+
 
       if (abvMetric) {
-        abvMetric.textContent = abvText;
+
+        abvMetric.textContent =
+          abvText;
+
       }
 
-      // Couleur de la bière
+
       if (bottle) {
-        const color = ebcToColor(ebc);
-        bottle.style.backgroundColor = color;
-        bottle.style.background = color;
+
+        const color =
+          ebcToColor(ebc);
+
+        bottle.style.backgroundColor =
+          color;
+
+        bottle.style.background =
+          color;
+
       }
 
-      // Nom de la recette
+
       if (recipeName) {
-        recipeName.innerHTML = name
-          ? escapeHTML(name)
-          : '<span class="recipe-placeholder">Donne-lui un nom...</span>';
+
+        recipeName.innerHTML =
+          name
+            ? escapeHTML(name)
+            : '<span class="recipe-placeholder">Donne-lui un nom...</span>';
+
       }
 
-      // Étiquette premium : le nom de la bière devient le titre principal
+
       if (labelName) {
-        labelName.textContent = name || "L'écume tropicale";
+
+        labelName.textContent =
+          name ||
+          "L'écume tropicale";
+
       }
+
 
       if (labelAbv) {
-        labelAbv.textContent = abvText;
+
+        labelAbv.textContent =
+          abvText;
+
       }
+
 
       if (labelEbc) {
-        labelEbc.textContent = `${ebc} EBC`;
+
+        labelEbc.textContent =
+          `${ebc} EBC`;
+
       }
 
-      // Le sous-titre varie automatiquement avec le profil de la bière
+
       if (labelStyle) {
-        let style = "BIÈRE ARTISANALE";
-        if (ebc <= 10 && abv <= 5.5) style = "BLONDE RAFRAÎCHISSANTE";
-        else if (ebc <= 25 && abv > 5.5) style = "PALE ALE HOUBLONNÉE";
-        else if (ebc > 50 && abv >= 6) style = "BIÈRE AMBRÉE";
-        else if (ebc > 90) style = "BIÈRE BRUNE INTENSE";
-        labelStyle.textContent = style;
-      }
-    }
 
+        let style =
+          "BIÈRE ARTISANALE";
+
+        if (
+          ebc <= 10 &&
+          abv <= 5.5
+        ) {
+
+          style =
+            "BLONDE RAFRAÎCHISSANTE";
+
+        } else if (
+          ebc <= 25 &&
+          abv > 5.5
+        ) {
+
+          style =
+            "PALE ALE HOUBLONNÉE";
+
+        } else if (
+          ebc > 50 &&
+          abv >= 6
+        ) {
+
+          style =
+            "BIÈRE AMBRÉE";
+
+        } else if (
+          ebc > 90
+        ) {
+
+          style =
+            "BIÈRE BRUNE INTENSE";
+
+        }
+
+        labelStyle.textContent =
+          style;
+
+      }
+
+    }
 
 
     /* =====================================================
@@ -2113,228 +2189,537 @@
        ===================================================== */
 
     function buildProposalText() {
-      const name = nameInput.value.trim() || "Sans nom";
-      const ebc = getEBC();
-      const abv = Number(getABV()).toFixed(1).replace(".", ",");
 
-      return `🍺 Proposition de bière — ${name}\n\n` +
+      const name =
+        nameInput.value.trim() ||
+        "Sans nom";
+
+      const ebc =
+        getEBC();
+
+      const abv =
+        Number(getABV())
+          .toFixed(1)
+          .replace(".", ",");
+
+      const aromas =
+        getSelectedAromas();
+
+      const otherIngredient =
+        otherIngredientInput
+          ? otherIngredientInput.value.trim()
+          : "";
+
+      return (
+        `🍺 Proposition de bière — ${name}\n\n` +
         `Couleur : ${ebc} EBC\n` +
-        `Taux d'alcool : ${abv} %\n\n` +
-        `Envoyé depuis le VERIHOP Beer Lab`;
+        `Taux d'alcool : ${abv} %\n` +
+        `Profil aromatique : ${aromas.join(", ")}\n` +
+        `Autre ingrédient : ${otherIngredient || "Aucun"}\n\n` +
+        `Envoyé depuis le VERIHOP Beer Lab`
+      );
+
     }
 
-    /* =====================================================
-       COPIER LA PROPOSITION
-       ===================================================== */
-
-    async function copyProposal() {
-      const text = buildProposalText();
-
-      try {
-        await navigator.clipboard.writeText(text);
-        showConfirm("✅ Proposition copiée !", false);
-      } catch (error) {
-        console.error("Erreur de copie :", error);
-        showConfirm("⚠️ Impossible de copier la proposition.", true);
-      }
-    }
 
     /* =====================================================
        MESSAGE
        ===================================================== */
 
-    function showConfirm(message, isError = false) {
+    function showConfirm(
+      message,
+      isError = false
+    ) {
+
       if (!confirmMsg) return;
 
-      confirmMsg.textContent = message;
-      confirmMsg.classList.toggle("error", Boolean(isError));
+      confirmMsg.textContent =
+        message;
+
+      confirmMsg.classList.toggle(
+        "error",
+        Boolean(isError)
+      );
 
       setTimeout(() => {
+
         confirmMsg.textContent = "";
-        confirmMsg.classList.remove("error");
+
+        confirmMsg.classList.remove(
+          "error"
+        );
+
       }, 3500);
+
     }
+
 
     /* =====================================================
        ENVOI SUPABASE
        ===================================================== */
 
     async function submitProposal() {
-      const name = nameInput.value.trim();
+
+      const name =
+        nameInput.value.trim();
 
       if (!name) {
-        showConfirm("⚠️ Donne d'abord un nom à ta bière.", true);
+
+        showConfirm(
+          "⚠️ Donne d'abord un nom à ta bière.",
+          true
+        );
+
         nameInput.focus();
+
         return;
+
       }
+
+
+      if (!validateAromas(true)) {
+
+        showConfirm(
+          "⚠️ Choisis entre 1 et 3 profils aromatiques.",
+          true
+        );
+
+        return;
+
+      }
+
 
       if (!supabaseClient) {
-        showConfirm("⚠️ Connexion à la base de données indisponible.", true);
+
+        showConfirm(
+          "⚠️ Connexion à la base de données indisponible.",
+          true
+        );
+
         return;
+
       }
+
 
       submitBtn.disabled = true;
-      submitBtn.textContent = "⏳ Envoi...";
+
+      submitBtn.textContent =
+        "⏳ Envoi...";
+
 
       try {
-        // On lit les valeurs AU MOMENT du clic.
-        // Elles correspondent donc toujours aux curseurs actuels.
-        const ebc = Number(ebcSlider.value);
-        const abv = Number(abvSlider.value);
 
-        const { error } = await supabaseClient
-          .from(TABLE_NAME)
-          .insert([{
-            name: name,
-            ebc: ebc,
-            abv: abv
-          }]);
+        const ebc =
+          Number(
+            ebcSlider.value
+          );
+
+        const abv =
+          Number(
+            abvSlider.value
+          );
+
+        const otherIngredient =
+          otherIngredientInput
+            ? otherIngredientInput.value.trim()
+            : "";
+
+
+        const { error } =
+          await supabaseClient
+            .from(TABLE_NAME)
+            .insert([{
+
+              name:
+                name,
+
+              ebc:
+                ebc,
+
+              abv:
+                abv,
+
+              aromas:
+                getSelectedAromas(),
+
+              other_ingredient:
+                otherIngredient || null
+
+            }]);
+
 
         if (error) {
+
           console.error(error);
-          showConfirm("⚠️ Envoi impossible : " + error.message, true);
+
+          showConfirm(
+            "⚠️ Envoi impossible : " +
+            error.message,
+            true
+          );
+
           return;
+
         }
 
-        showConfirm("✅ Proposition envoyée, merci !", false);
+
+        showConfirm(
+          "✅ Proposition envoyée, merci !",
+          false
+        );
+
         await loadProposals();
+
       } catch (error) {
+
         console.error(error);
-        showConfirm("⚠️ Une erreur est survenue lors de l'envoi.", true);
+
+        showConfirm(
+          "⚠️ Une erreur est survenue lors de l'envoi.",
+          true
+        );
+
       } finally {
+
         submitBtn.disabled = false;
-        submitBtn.textContent = "📮 Envoyer ma proposition";
+
+        submitBtn.textContent =
+          "📮 Envoyer ma proposition";
+
       }
+
     }
+
 
     /* =====================================================
        MUR DES PROPOSITIONS
        ===================================================== */
 
     async function loadProposals() {
+
       if (!wallList) return;
 
+
       if (!supabaseClient) {
+
         wallList.innerHTML = `
           <p class="wall-empty">
             Les propositions seront disponibles lorsque la connexion sera rétablie.
           </p>
         `;
+
         return;
+
       }
 
+
       try {
-        const { data, error } = await supabaseClient
-          .from(TABLE_NAME)
-          .select("name, ebc, abv, created_at")
-          .order("created_at", { ascending: false })
-          .limit(24);
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from(TABLE_NAME)
+            .select(
+              "name, ebc, abv, aromas, other_ingredient, created_at"
+            )
+            .order(
+              "created_at",
+              {
+                ascending: false
+              }
+            )
+            .limit(24);
+
 
         if (error) {
+
           console.error(error);
+
           wallList.innerHTML = `
             <p class="wall-empty">
               ⚠️ Impossible de charger les propositions.
             </p>
           `;
+
           return;
+
         }
 
-        if (!data || data.length === 0) {
+
+        if (
+          !data ||
+          data.length === 0
+        ) {
+
           wallList.innerHTML = `
             <p class="wall-empty">
               Aucune proposition pour le moment, sois le premier à en envoyer une 🍺
             </p>
           `;
+
           return;
+
         }
 
-        wallList.innerHTML = data.map(row => {
-          const ebc = Number(row.ebc);
-          const abv = Number(row.abv);
 
-          return `
-            <div class="wall-card">
-              <div
-                class="wall-swatch"
-                style="background:${ebcToColor(ebc)};">
-              </div>
+        wallList.innerHTML =
+          data
+            .map(row => {
 
-              <div>
-                <div class="wall-name">
-                  ${escapeHTML(row.name)}
+              const ebc =
+                Number(row.ebc);
+
+              const abv =
+                Number(row.abv);
+
+
+              return `
+
+                <div class="wall-card">
+
+                  <div
+                    class="wall-swatch"
+                    style="background:${ebcToColor(ebc)};">
+                  </div>
+
+                  <div>
+
+                    <div class="wall-name">
+
+                      ${escapeHTML(row.name)}
+
+                    </div>
+
+                    <div class="wall-meta">
+
+                      ${ebc} EBC ·
+                      ${formatABV(abv)}
+
+                    </div>
+
+
+                    ${
+                      Array.isArray(row.aromas) &&
+                      row.aromas.length
+
+                        ? `
+
+                          <div class="wall-aromas">
+
+                            ${row.aromas
+                              .slice(0, 3)
+                              .map(
+                                aroma =>
+                                  `<span class="wall-aroma">${escapeHTML(aroma)}</span>`
+                              )
+                              .join("")}
+
+                          </div>
+
+                        `
+
+                        : ""
+                    }
+
+
+                    ${
+                      row.other_ingredient
+
+                        ? `
+
+                          <div class="wall-ingredient">
+
+                            🧪 ${escapeHTML(
+                              row.other_ingredient
+                            )}
+
+                          </div>
+
+                        `
+
+                        : ""
+                    }
+
+                  </div>
+
                 </div>
 
-                <div class="wall-meta">
-                  ${ebc} EBC · ${formatABV(abv)}
-                </div>
-              </div>
-            </div>
-          `;
-        }).join("");
+              `;
+
+            })
+            .join("");
+
+
       } catch (error) {
+
         console.error(error);
+
         wallList.innerHTML = `
+
           <p class="wall-empty">
+
             ⚠️ Impossible de charger les propositions.
+
           </p>
+
         `;
+
       }
+
     }
+
 
     /* =====================================================
        RESET
        ===================================================== */
 
     function clearForm() {
-      if (nameInput) nameInput.value = "";
-      if (ebcSlider) ebcSlider.value = "20";
-      if (abvSlider) abvSlider.value = "5";
-      if (confirmMsg) confirmMsg.textContent = "";
+
+      if (nameInput) {
+
+        nameInput.value = "";
+
+      }
+
+
+      if (otherIngredientInput) {
+
+        otherIngredientInput.value = "";
+
+      }
+
+
+      if (ebcSlider) {
+
+        ebcSlider.value = "20";
+
+      }
+
+
+      if (abvSlider) {
+
+        abvSlider.value = "5";
+
+      }
+
+
+      aromaCheckboxes.forEach(
+        checkbox => {
+
+          checkbox.checked =
+            false;
+
+        }
+      );
+
+
+      if (aromaError) {
+
+        aromaError.textContent = "";
+
+      }
+
+
+      updateAromaPreview();
+
+
+      if (confirmMsg) {
+
+        confirmMsg.textContent = "";
+
+      }
+
 
       updatePreview();
+
     }
+
 
     /* =====================================================
        EVENEMENTS
        ===================================================== */
 
-    // input = mise à jour instantanée pendant que le curseur bouge
-    // change = sécurité supplémentaire pour tous les navigateurs
     if (nameInput) {
-      nameInput.addEventListener("input", updatePreview);
+
+      nameInput.addEventListener(
+        "input",
+        updatePreview
+      );
+
     }
+
 
     if (ebcSlider) {
-      ebcSlider.addEventListener("input", updatePreview);
-      ebcSlider.addEventListener("change", updatePreview);
+
+      ebcSlider.addEventListener(
+        "input",
+        updatePreview
+      );
+
+      ebcSlider.addEventListener(
+        "change",
+        updatePreview
+      );
+
     }
+
 
     if (abvSlider) {
-      abvSlider.addEventListener("input", updatePreview);
-      abvSlider.addEventListener("change", updatePreview);
+
+      abvSlider.addEventListener(
+        "input",
+        updatePreview
+      );
+
+      abvSlider.addEventListener(
+        "change",
+        updatePreview
+      );
+
     }
 
-    if (copyBtn) {
-      copyBtn.addEventListener("click", copyProposal);
-    }
+
+    aromaCheckboxes.forEach(
+      checkbox => {
+
+        checkbox.addEventListener(
+          "change",
+          handleAromaChange
+        );
+
+      }
+    );
+
 
     if (submitBtn) {
-      submitBtn.addEventListener("click", submitProposal);
+
+      submitBtn.addEventListener(
+        "click",
+        submitProposal
+      );
+
     }
 
+
     if (clearBtn) {
-      clearBtn.addEventListener("click", clearForm);
+
+      clearBtn.addEventListener(
+        "click",
+        clearForm
+      );
+
     }
+
 
     /* =====================================================
        INITIALISATION
        ===================================================== */
 
-    // Important : les curseurs sont initialisés indépendamment
-    // de Supabase. Un problème réseau ne peut donc plus bloquer
-    // l'interface Beer Lab.
     updatePreview();
+
+    updateAromaPreview();
 
     loadProposals();
 
