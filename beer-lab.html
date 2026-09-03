@@ -496,6 +496,113 @@
       font-size: 0.95rem;
     }
 
+      /* =========================
+       PROFIL AROMATIQUE
+       ========================= */
+
+    .aroma-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .aroma-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .aroma-option {
+      position: relative;
+    }
+
+    .aroma-option label {
+      display: block;
+      padding: 10px 11px;
+      border: 1px solid #cfdcc9;
+      border-radius: 10px;
+      background: #f8faf6;
+      color: #31523a;
+      font-size: 0.88rem;
+      line-height: 1.25;
+      cursor: pointer;
+      transition: 0.18s ease;
+      user-select: none;
+    }
+
+    .aroma-option label:hover {
+      border-color: #4F8A54;
+      background: #eef4eb;
+      transform: translateY(-1px);
+    }
+
+    .aroma-option input:checked + label {
+      background: #2E6F40;
+      border-color: #2E6F40;
+      color: white;
+      box-shadow: 0 3px 8px rgba(46,111,64,0.18);
+    }
+
+    .aroma-option input:focus-visible + label {
+      outline: 3px solid rgba(79,138,84,0.25);
+      outline-offset: 2px;
+    }
+
+    .aroma-counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: #777;
+    }
+
+    .aroma-counter strong {
+      color: #2E6F40;
+    }
+
+    .aroma-error {
+      color: #b4493c;
+      font-weight: bold;
+      min-height: 1.1em;
+      text-align: right;
+    }
+
+    .selected-aromas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 4px 0 14px;
+      min-height: 24px;
+    }
+
+    .aroma-tag,
+    .wall-aroma {
+      display: inline-block;
+      background: #eef4eb;
+      color: #2E6F40;
+      border: 1px solid #DCE8D8;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.76rem;
+      font-weight: bold;
+    }
+
+    .wall-aromas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 5px;
+    }
+
+    .wall-aroma {
+      padding: 2px 7px;
+      font-size: 0.68rem;
+    }
+
+
 
     /* =========================
        BOUTONS
@@ -1173,6 +1280,181 @@
 
         </div>
 
+         <!-- PROFIL AROMATIQUE -->
+        <div class="field">
+          <label class="field-label">
+            Profil aromatique
+          </label>
+
+          <p class="field-hint">
+            Choisis de 1 à 3 profils aromatiques.
+          </p>
+
+          <div class="aroma-grid" id="aromaGrid">
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma0" name="aroma" value="Fruité">
+              <label for="aroma0">🍑 Fruité</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma1" name="aroma" value="Agrumes">
+              <label for="aroma1">🍊 Agrumes</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma2" name="aroma" value="Fruits tropicaux">
+              <label for="aroma2">🥭 Fruits tropicaux</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma3" name="aroma" value="Fruits rouges">
+              <label for="aroma3">🍓 Fruits rouges</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma4" name="aroma" value="Fruits à noyau">
+              <label for="aroma4">🍑 Fruits à noyau</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma5" name="aroma" value="Fruits blancs">
+              <label for="aroma5">🍐 Fruits blancs</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma6" name="aroma" value="Pomme / Poire">
+              <label for="aroma6">🍏 Pomme / Poire</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma7" name="aroma" value="Raisin / Vin">
+              <label for="aroma7">🍇 Raisin / Vin</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma8" name="aroma" value="Floral">
+              <label for="aroma8">🌸 Floral</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma9" name="aroma" value="Herbacé">
+              <label for="aroma9">🌿 Herbacé</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma10" name="aroma" value="Thé / Végétal">
+              <label for="aroma10">🍃 Thé / Végétal</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma11" name="aroma" value="Houblonné">
+              <label for="aroma11">🌱 Houblonné</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma12" name="aroma" value="Résineux / Pin">
+              <label for="aroma12">🌲 Résineux / Pin</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma13" name="aroma" value="Résine / Cannabis">
+              <label for="aroma13">🌲 Résine / Cannabis</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma14" name="aroma" value="Épicé">
+              <label for="aroma14">🌶️ Épicé</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma15" name="aroma" value="Épices douces">
+              <label for="aroma15">✨ Épices douces</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma16" name="aroma" value="Poivré">
+              <label for="aroma16">🫚 Poivré</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma17" name="aroma" value="Clou de girofle / Phénolique">
+              <label for="aroma17">🌿 Clou de girofle / Phénolique</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma18" name="aroma" value="Levure / Fermentaire">
+              <label for="aroma18">🧫 Levure / Fermentaire</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma19" name="aroma" value="Funky / Fermentation">
+              <label for="aroma19">🧪 Funky / Fermentation</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma20" name="aroma" value="Biscuit / Céréales">
+              <label for="aroma20">🍪 Biscuit / Céréales</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma21" name="aroma" value="Pain / Malt">
+              <label for="aroma21">🥖 Pain / Malt</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma22" name="aroma" value="Toasté / Grillé">
+              <label for="aroma22">🍞 Toasté / Grillé</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma23" name="aroma" value="Caramel">
+              <label for="aroma23">🍮 Caramel</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma24" name="aroma" value="Toffee / Caramel">
+              <label for="aroma24">🍬 Toffee / Caramel</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma25" name="aroma" value="Miel">
+              <label for="aroma25">🍯 Miel</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma26" name="aroma" value="Noisette / Fruits secs">
+              <label for="aroma26">🌰 Noisette / Fruits secs</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma27" name="aroma" value="Vanillé">
+              <label for="aroma27">🍦 Vanillé</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma28" name="aroma" value="Noix de coco">
+              <label for="aroma28">🥥 Noix de coco</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma29" name="aroma" value="Chocolat">
+              <label for="aroma29">🍫 Chocolat</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma30" name="aroma" value="Café">
+              <label for="aroma30">☕ Café</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma31" name="aroma" value="Torréfié">
+              <label for="aroma31">🔥 Torréfié</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma32" name="aroma" value="Fumé">
+              <label for="aroma32">💨 Fumé</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma33" name="aroma" value="Boisé">
+              <label for="aroma33">🪵 Boisé</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma34" name="aroma" value="Terreux">
+              <label for="aroma34">🌱 Terreux</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma35" name="aroma" value="Minéral">
+              <label for="aroma35">🪨 Minéral</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma36" name="aroma" value="Acidulé / Agrume">
+              <label for="aroma36">🍋 Acidulé / Agrume</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma37" name="aroma" value="Acidulé / Lactique">
+              <label for="aroma37">🥛 Acidulé / Lactique</label>
+            </div>
+            <div class="aroma-option">
+              <input type="checkbox" id="aroma38" name="aroma" value="Alcool / Chaleureux">
+              <label for="aroma38">🥃 Alcool / Chaleureux</label>
+            </div>
+          </div>
+
+          <div class="aroma-counter">
+            <span><strong id="aromaCount">0</strong> / 3 sélectionné(s)</span>
+            <span id="aromaError" class="aroma-error"></span>
+          </div>
+        </div>
+
 
         <!-- EBC -->
 
@@ -1607,7 +1889,7 @@
     const SUPABASE_ANON_KEY = "sb_publishable_ctMhvefmZVySxT43Pyb3xQ_tPFqXr9v";
     const TABLE_NAME = "beer_proposals";
 
-    /* =====================================================
+  /* =====================================================
        ELEMENTS
        ===================================================== */
 
@@ -1630,6 +1912,13 @@
     const submitBtn = document.getElementById("submitBtn");
     const clearBtn = document.getElementById("clearBtn");
     const copyBtn = document.getElementById("copyBtn");
+
+    const aromaCheckboxes = Array.from(
+      document.querySelectorAll('input[name="aroma"]')
+    );
+    const aromaCount = document.getElementById("aromaCount");
+    const aromaError = document.getElementById("aromaError");
+    const selectedAromas = document.getElementById("selectedAromas");
 
     /* =====================================================
        SECURITE : VERIFICATION DES ELEMENTS
@@ -1687,8 +1976,69 @@
     function formatABV(value) {
       return Number(value).toFixed(1).replace(".", ",") + " %";
     }
+      /* =====================================================
+       PROFILS AROMATIQUES
+       ===================================================== */
 
-    /* =====================================================
+    function getSelectedAromas() {
+      return aromaCheckboxes
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+    }
+
+    function updateAromaPreview() {
+      const aromas = getSelectedAromas();
+
+      if (aromaCount) aromaCount.textContent = aromas.length;
+
+      if (selectedAromas) {
+        selectedAromas.innerHTML = aromas
+          .map(aroma =>
+            `<span class="aroma-tag">${escapeHTML(aroma)}</span>`
+          )
+          .join("");
+      }
+    }
+
+    function validateAromas(showError = true) {
+      const count = getSelectedAromas().length;
+
+      if (count < 1 || count > 3) {
+        if (showError && aromaError) {
+          aromaError.textContent =
+            count < 1
+              ? "Choisis au moins 1 profil."
+              : "Maximum 3 profils.";
+        }
+        return false;
+      }
+
+      if (aromaError) aromaError.textContent = "";
+      return true;
+    }
+
+    function handleAromaChange(event) {
+      const checked = aromaCheckboxes.filter(
+        checkbox => checkbox.checked
+      );
+
+      if (checked.length > 3) {
+        event.target.checked = false;
+
+        if (aromaError) {
+          aromaError.textContent = "Maximum 3 profils.";
+          setTimeout(() => {
+            if (aromaError) aromaError.textContent = "";
+          }, 2500);
+        }
+      }
+
+      updateAromaPreview();
+    }
+
+
+
+   /* =====================================================
        APERCU
        ===================================================== */
 
@@ -1755,6 +2105,8 @@
         labelStyle.textContent = style;
       }
     }
+
+
 
     /* =====================================================
        TEXTE DE PROPOSITION
