@@ -615,113 +615,171 @@
 
 
     /* =========================
-       BOUTEILLE
+       BOUTEILLE / ETIQUETTE PREMIUM
        ========================= */
 
     .bottle-area {
-
       display: flex;
-
       justify-content: center;
-
       align-items: end;
-
-      height: 210px;
-
-      margin: 15px 0 20px;
-
+      min-height: 340px;
+      margin: 18px 0 22px;
       position: relative;
+      padding-top: 48px;
     }
 
+    .bottle-area::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 190px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.13);
+      filter: blur(7px);
+      z-index: 0;
+    }
 
     .bottle {
-
-      width: 75px;
-
-      height: 165px;
-
-      background: #ffe699;
-
-      border-radius:
-        13px 13px 10px 10px;
-
+      width: 142px;
+      height: 286px;
       position: relative;
-
+      z-index: 1;
+      border-radius: 24px 24px 17px 17px;
+      background: #b96b20;
       box-shadow:
-        inset -7px 0 8px
-        rgba(0,0,0,0.22),
-        5px 8px 15px
-        rgba(0,0,0,0.18);
-
-      transition:
-        background 0.3s ease;
+        inset 12px 0 14px rgba(0,0,0,.22),
+        inset -9px 0 13px rgba(255,255,255,.10),
+        9px 13px 22px rgba(0,0,0,.18);
+      transition: background .35s ease, box-shadow .35s ease;
     }
-
 
     .bottle::before {
-
       content: "";
-
       position: absolute;
-
-      top: -28px;
-
-      left: 21px;
-
-      width: 33px;
-
-      height: 35px;
-
-      background: #3b2415;
-
-      border-radius:
-        5px 5px 2px 2px;
+      top: -51px;
+      left: 47px;
+      width: 48px;
+      height: 63px;
+      border-radius: 10px 10px 4px 4px;
+      background: linear-gradient(90deg,#24170f,#56331c 45%,#1e130d);
+      box-shadow: inset 5px 0 7px rgba(255,255,255,.08);
     }
-
 
     .bottle::after {
-
       content: "";
-
       position: absolute;
-
-      top: 48px;
-
-      left: 7px;
-
-      width: 61px;
-
-      height: 55px;
-
-      background: #f7f4ec;
-
-      border-radius: 5px;
+      top: -56px;
+      left: 44px;
+      width: 54px;
+      height: 10px;
+      border-radius: 50%;
+      background: #b88a2d;
+      box-shadow: 0 2px 3px rgba(0,0,0,.25);
     }
 
+    /* =====================================================
+       ETIQUETTE DE LA BOUTEILLE
+       Le logo est une vraie image : remplace simplement
+       le chemin ci-dessous dans le HTML.
+       ===================================================== */
 
     .bottle-label {
-
       position: absolute;
-
-      z-index: 2;
-
-      top: 58px;
-
-      left: 13px;
-
-      width: 49px;
-
+      z-index: 3;
+      top: 70px;
+      left: 7px;
+      width: 128px;
+      height: 154px;
+      box-sizing: border-box;
+      padding: 18px 10px 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       text-align: center;
-
-      color: #2E6F40;
-
-      font-size: 0.55rem;
-
-      font-weight: bold;
-
-      line-height: 1.1;
+      background: rgba(250, 247, 237, .97);
+      border: 1px solid rgba(190, 153, 76, .65);
+      border-radius: 2px;
+      box-shadow: 0 3px 7px rgba(0,0,0,.16);
     }
 
+    .bottle-label::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(23,76,54,.20);
+      pointer-events: none;
+    }
+
+    .label-logo {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 82px;
+      max-width: 100%;
+      max-height: 70px;
+      height: auto;
+      object-fit: contain;
+      margin: 2px auto 12px;
+    }
+
+    .label-name {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 3px;
+      box-sizing: border-box;
+      color: #174c36;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.05;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .label-divider {
+      position: relative;
+      z-index: 2;
+      width: 58px;
+      height: 1px;
+      flex: 0 0 auto;
+      margin: 8px auto 7px;
+      background: #b88a2d;
+    }
+
+    .label-info {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      font-size: 6.5px;
+      font-weight: 800;
+      line-height: 1;
+      color: #174c36;
+      white-space: nowrap;
+    }
+
+    .label-placeholder {
+      color: #b88a2d;
+    }
+
+    /* Anciennes classes conservées pour compatibilité JS, mais
+       elles ne sont plus utilisées dans l'étiquette. */
+    .label-brand,
+    .label-hop,
+    .label-landscape,
+    .label-style {
+      display: none;
+    }
 
     /* =========================
        METRIQUES
@@ -1273,8 +1331,25 @@
               class="bottle-label"
               id="bottleLabel">
 
-              VERIHOP<br>
-              BEER LAB
+
+              <img
+                class="label-logo"
+                src="images/veriboc_logo.jpg"
+                alt="Logo VERIHOP">
+
+              <!-- Le nom de la bière est modifié automatiquement
+                   quand l'utilisateur écrit son nom. -->
+              <span
+                class="label-name"
+                id="labelName">L'écume tropicale</span>
+
+              <span class="label-divider"></span>
+
+              <span class="label-info">
+                <span id="labelAbv">5,0 %</span>
+                <span>•</span>
+                <span id="labelEbc">20 EBC</span>
+              </span>
 
             </div>
 
@@ -1546,6 +1621,10 @@
     const recipeName = document.getElementById("recipeName");
     const bottle = document.getElementById("bottle");
     const bottleLabel = document.getElementById("bottleLabel");
+    const labelName = document.getElementById("labelName");
+    const labelStyle = document.getElementById("labelStyle");
+    const labelAbv = document.getElementById("labelAbv");
+    const labelEbc = document.getElementById("labelEbc");
     const confirmMsg = document.getElementById("confirmMsg");
     const wallList = document.getElementById("wallList");
     const submitBtn = document.getElementById("submitBtn");
@@ -1653,11 +1732,27 @@
           : '<span class="recipe-placeholder">Donne-lui un nom...</span>';
       }
 
-      // Etiquette bouteille
-      if (bottleLabel) {
-        bottleLabel.innerHTML =
-          "VERIHOP<br>" +
-          (name ? escapeHTML(name.slice(0, 16)) : "BEER LAB");
+      // Étiquette premium : le nom de la bière devient le titre principal
+      if (labelName) {
+        labelName.textContent = name || "L'écume tropicale";
+      }
+
+      if (labelAbv) {
+        labelAbv.textContent = abvText;
+      }
+
+      if (labelEbc) {
+        labelEbc.textContent = `${ebc} EBC`;
+      }
+
+      // Le sous-titre varie automatiquement avec le profil de la bière
+      if (labelStyle) {
+        let style = "BIÈRE ARTISANALE";
+        if (ebc <= 10 && abv <= 5.5) style = "BLONDE RAFRAÎCHISSANTE";
+        else if (ebc <= 25 && abv > 5.5) style = "PALE ALE HOUBLONNÉE";
+        else if (ebc > 50 && abv >= 6) style = "BIÈRE AMBRÉE";
+        else if (ebc > 90) style = "BIÈRE BRUNE INTENSE";
+        labelStyle.textContent = style;
       }
     }
 
